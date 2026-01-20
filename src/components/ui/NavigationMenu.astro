@@ -1,0 +1,11 @@
+---
+export interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<nav class={`flex items-center justify-between ${className}`}>
+  <slot />
+</nav>

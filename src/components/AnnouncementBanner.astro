@@ -1,0 +1,84 @@
+---
+export interface Props {
+  class?: string;
+  text?: string;
+  linkUrl?: string;
+  linkText?: string;
+}
+
+const { 
+  class: className = '',
+  text = 'Cleric Named a Gartner® Cool Vendor 2025 in AI for SRE and Observability.',
+  linkUrl = '#learn-more',
+  linkText = 'Find out more'
+} = Astro.props;
+---
+
+<div id="announcement-banner" class={`bg-cleric-black transition-all duration-300 fixed top-0 left-0 right-0 z-[60] ${className}`}>
+  <div class="container mx-auto px-4 md:px-10 2xl:px-20">
+    <div class="flex items-center justify-center gap-2 py-2 relative">
+
+      <!-- Content (Centered) -->
+      <div class="flex items-center justify-center gap-2 text-center px-8 max-w-full overflow-hidden">
+        <span class="text-cleric-white font-body text-sm leading-[145%] truncate min-w-0">
+          {text}
+        </span>
+        <a
+          href={linkUrl}
+          class="text-purple-40 font-body text-sm leading-[145%] underline hover:text-purple-40/80 transition-colors whitespace-nowrap flex-shrink-0"
+        >
+          {linkText}
+        </a>
+      </div>
+
+      <!-- Close Button (Right) -->
+      <button
+        id="close-banner"
+        class="absolute right-0 p-1 text-text-b hover:text-cleric-white transition-colors"
+        aria-label="Close announcement"
+      >
+        <!-- Lucide X Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"/>
+          <path d="m6 6 12 12"/>
+        </svg>
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  const banner = document.getElementById('announcement-banner');
+  const closeButton = document.getElementById('close-banner');
+  const navbar = document.querySelector('nav');
+
+  // Set initial navbar position
+  if (banner && navbar) {
+    const bannerHeight = banner.offsetHeight;
+    navbar.style.top = `${bannerHeight}px`;
+  }
+
+  closeButton?.addEventListener('click', () => {
+    if (banner && navbar) {
+      // Add closing animation
+      const bannerHeight = banner.offsetHeight;
+      banner.style.height = bannerHeight + 'px';
+      banner.style.overflow = 'hidden';
+
+      // Trigger animation
+      requestAnimationFrame(() => {
+        banner.style.height = '0px';
+        banner.style.paddingTop = '0px';
+        banner.style.paddingBottom = '0px';
+        banner.style.opacity = '0';
+        navbar.style.top = '0px';
+      });
+
+      // Remove from DOM after animation
+      setTimeout(() => {
+        banner.remove();
+      }, 300);
+    }
+  });
+</script>

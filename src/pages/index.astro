@@ -1,11 +1,164 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import AnnouncementBanner from '../components/AnnouncementBanner.astro';
+import Navbar from '../components/Navbar.astro';
+import Button from '../components/ui/Button.astro';
+import '../global.css';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cleric AI - Transform Your Workflow</title>
+  <meta name="description" content="AI-powered solutions for modern businesses">
+</head>
+<body class="min-h-screen">
+
+  <!-- Announcement Banner -->
+  <AnnouncementBanner 
+    text="Cleric Named a Gartner® Cool Vendor 2025 in AI for SRE and Observability."
+    linkUrl="#learn-more"
+    linkText="Find out more"
+  />
+
+  <!-- Navbar -->
+  <Navbar />
+
+  <!-- Hero Section with Background -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/background.jpg"
+        alt="Background"
+        class="absolute bottom-[-20%] left-0 right-0 w-full h-[150%] object-cover object-[center_top]"
+      />
+      <!-- White gradient fade at bottom for transition -->
+      <div class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-cleric-white via-cleric-white/80 to-transparent z-10"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 container mx-auto px-4 lg:px-8 text-center">
+      <div class="max-w-4xl mx-auto space-y-8">
+
+        <!-- Title -->
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading text-cleric-white leading-tight">
+          Transform Your Workflow with AI
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-xl md:text-2xl text-cleric-gray-a font-body max-w-2xl mx-auto">
+          Unlock the power of artificial intelligence to streamline operations, boost productivity, and drive innovation in your business.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <Button type="primary" size="large" mode="light">
+            Get Started Free
+          </Button>
+          <Button type="secondary" size="large" mode="light">
+            Watch Demo
+          </Button>
+        </div>
+
+        <!-- Social Proof / Stats -->
+        <div class="grid grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto">
+          <div class="space-y-2">
+            <p class="text-3xl md:text-4xl font-heading text-cleric-white">10K+</p>
+            <p class="text-sm text-cleric-gray-a font-body">Active Users</p>
+          </div>
+          <div class="space-y-2">
+            <p class="text-3xl md:text-4xl font-heading text-cleric-white">99.9%</p>
+            <p class="text-sm text-cleric-gray-a font-body">Uptime</p>
+          </div>
+          <div class="space-y-2">
+            <p class="text-3xl md:text-4xl font-heading text-cleric-white">24/7</p>
+            <p class="text-sm text-cleric-gray-a font-body">Support</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+      <svg class="w-6 h-6 text-cleric-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+
+  </section>
+
+  <!-- Features Section Placeholder -->
+  <section id="features" class="py-20 bg-cleric-white">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-4xl md:text-5xl font-heading text-text-a mb-4">
+          Powerful Features
+        </h2>
+        <p class="text-lg text-text-b font-body">
+          Everything you need to supercharge your business with AI
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-purple-40/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">🚀</span>
+          </div>
+          <h3 class="text-xl font-body font-semibold text-text-a mb-2">
+            Fast Performance
+          </h3>
+          <p class="text-text-b font-body">
+            Lightning-fast AI processing that scales with your needs.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-purple-40/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">🔒</span>
+          </div>
+          <h3 class="text-xl font-body font-semibold text-text-a mb-2">
+            Secure & Private
+          </h3>
+          <p class="text-text-b font-body">
+            Enterprise-grade security to keep your data safe and compliant.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-purple-40/10 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">⚡</span>
+          </div>
+          <h3 class="text-xl font-body font-semibold text-text-a mb-2">
+            Easy Integration
+          </h3>
+          <p class="text-text-b font-body">
+            Seamlessly integrate with your existing tools and workflows.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section Placeholder -->
+  <section id="pricing" class="py-20 bg-muted">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-heading text-text-a mb-4">
+          Simple, Transparent Pricing
+        </h2>
+        <p class="text-lg text-text-b font-body">
+          Choose the plan that's right for you
+        </p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
