@@ -1,0 +1,92 @@
+/* GT Alpina  */
+@font-face {
+  font-family: 'GT Alpina';
+  src: url('/fonts/GT Alpina/GT-Alpina-Standard-Light.woff2') format('woff2'),
+       url('/fonts/GT Alpina/GT-Alpina-Standard-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Alpina';
+  src: url('/fonts/GT Alpina/GT-Alpina-Standard-Regular.woff2') format('woff2'),
+       url('/fonts/GT Alpina/GT-Alpina-Standard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Alpina';
+  src: url('/fonts/GT Alpina/GT-Alpina-Standard-Medium.woff2') format('woff2'),
+       url('/fonts/GT Alpina/GT-Alpina-Standard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Cleric Sans Text */
+@font-face {
+  font-family: 'Cleric Sans Text';
+  src: url('/fonts/ClericSans/Cleric Sans woff2/Cleric-Sans-Text-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cleric Sans Text';
+  src: url('/fonts/ClericSans/Cleric Sans woff2/Cleric-Sans-Text-300Italic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cleric Sans Text';
+  src: url('/fonts/ClericSans/Cleric Sans woff2/Cleric-Sans-Text-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cleric Sans Text';
+  src: url('/fonts/ClericSans/Cleric Sans woff2/Cleric-Sans-Text-400Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cleric Sans Text';
+  src: url('/fonts/ClericSans/Cleric Sans woff2/Cleric-Sans-Text-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cleric Sans Text';
+  src: url('/fonts/ClericSans/Cleric Sans woff2/Cleric-Sans-Text-500Italic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cleric Sans Text';
+  src: url('/fonts/ClericSans/Cleric Sans woff2/Cleric-Sans-Text-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cleric Sans Text';
+  src: url('/fonts/ClericSans/Cleric Sans woff2/Cleric-Sans-Text-600Italic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}

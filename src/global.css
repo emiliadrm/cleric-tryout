@@ -1,0 +1,107 @@
+@import './styles/fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Cleric AI Design System Colors */
+
+    /* Primary Colors */
+    --primary-white: 0 0% 100%; /* rgba(255, 255, 255, 1) */
+    --primary-black: 0 0% 0%; /* rgba(0, 0, 0, 1) */
+    --primary-gray-a: 0 0% 87.8%; /* rgba(224, 224, 224, 1) */
+
+    /* Text Colors */
+    --text-a: 0 0% 19.2%; /* rgba(49, 49, 49, 1) - Main text */
+    --text-b: 0 0% 42%; /* rgba(107, 107, 107, 1) - Secondary text */
+
+    /* Secondary Colors */
+    --purple-40: 265 71% 78%; /* rgba(194, 156, 241, 1) */
+
+    /* Background & Foreground */
+    --background: var(--primary-white);
+    --foreground: var(--text-a);
+
+    /* Component Tokens */
+    --card: var(--primary-white);
+    --card-foreground: var(--text-a);
+    --popover: var(--primary-white);
+    --popover-foreground: var(--text-a);
+
+    /* Primary (Black) */
+    --primary: var(--primary-black);
+    --primary-foreground: var(--primary-white);
+
+    /* Secondary (Purple) */
+    --secondary: var(--purple-40);
+    --secondary-foreground: var(--primary-white);
+
+    /* Muted */
+    --muted: var(--primary-gray-a);
+    --muted-foreground: var(--text-b);
+
+    /* Accent (Purple) */
+    --accent: var(--purple-40);
+    --accent-foreground: var(--primary-white);
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: var(--primary-white);
+
+    /* Borders & Inputs */
+    --border: var(--primary-gray-a);
+    --input: var(--primary-gray-a);
+    --ring: var(--purple-40);
+
+    /* Border Radius */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark mode - inverted palette */
+    --background: var(--primary-black);
+    --foreground: var(--primary-white);
+
+    --card: 0 0% 10%;
+    --card-foreground: var(--primary-white);
+    --popover: 0 0% 10%;
+    --popover-foreground: var(--primary-white);
+
+    --primary: var(--primary-white);
+    --primary-foreground: var(--primary-black);
+
+    --secondary: var(--purple-40);
+    --secondary-foreground: var(--primary-black);
+
+    --muted: 0 0% 20%;
+    --muted-foreground: var(--primary-gray-a);
+
+    --accent: var(--purple-40);
+    --accent-foreground: var(--primary-black);
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: var(--primary-white);
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: var(--purple-40);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cleric Sans Text', 'Inter', sans-serif;
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'GT Alpina', 'Lora', serif;
+    font-weight: 400;
+  }
+}

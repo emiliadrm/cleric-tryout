@@ -1,0 +1,251 @@
+---
+import '../global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cleric AI - Color System</title>
+</head>
+<body class="min-h-screen bg-background p-8">
+  <div class="max-w-6xl mx-auto space-y-12">
+
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h1 class="text-5xl font-heading text-text-a mb-4">Cleric AI Color System</h1>
+      <p class="text-lg text-text-b font-body">Design System Palette</p>
+    </div>
+
+    <!-- Primary Colors -->
+    <section class="space-y-6">
+      <h2 class="text-3xl font-heading text-text-a mb-6">Primary Colors</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- White -->
+        <div class="space-y-3">
+          <div class="h-32 rounded-xl bg-cleric-white border-2 border-cleric-gray-a flex items-center justify-center">
+            <span class="text-cleric-black font-body font-semibold">White</span>
+          </div>
+          <div class="space-y-1">
+            <p class="text-sm font-body font-semibold text-text-a">Primary White</p>
+            <p class="text-xs font-body text-text-b font-mono">rgba(255, 255, 255, 1)</p>
+            <p class="text-xs font-body text-text-b font-mono">#FFFFFF</p>
+            <p class="text-xs font-body text-purple-40">bg-cleric-white</p>
+          </div>
+        </div>
+
+        <!-- Black -->
+        <div class="space-y-3">
+          <div class="h-32 rounded-xl bg-cleric-black flex items-center justify-center">
+            <span class="text-cleric-white font-body font-semibold">Black</span>
+          </div>
+          <div class="space-y-1">
+            <p class="text-sm font-body font-semibold text-text-a">Primary Black</p>
+            <p class="text-xs font-body text-text-b font-mono">rgba(0, 0, 0, 1)</p>
+            <p class="text-xs font-body text-text-b font-mono">#000000</p>
+            <p class="text-xs font-body text-purple-40">bg-cleric-black</p>
+          </div>
+        </div>
+
+        <!-- Gray A -->
+        <div class="space-y-3">
+          <div class="h-32 rounded-xl bg-cleric-gray-a flex items-center justify-center">
+            <span class="text-cleric-black font-body font-semibold">Gray A</span>
+          </div>
+          <div class="space-y-1">
+            <p class="text-sm font-body font-semibold text-text-a">Primary Gray A</p>
+            <p class="text-xs font-body text-text-b font-mono">rgba(224, 224, 224, 1)</p>
+            <p class="text-xs font-body text-text-b font-mono">#E0E0E0</p>
+            <p class="text-xs font-body text-purple-40">bg-cleric-gray-a</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Text Colors -->
+    <section class="space-y-6">
+      <h2 class="text-3xl font-heading text-text-a mb-6">Text Colors</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Text A -->
+        <div class="space-y-3">
+          <div class="h-32 rounded-xl bg-text-a flex items-center justify-center">
+            <span class="text-cleric-white font-body font-semibold">Text A</span>
+          </div>
+          <div class="space-y-1">
+            <p class="text-sm font-body font-semibold text-text-a">Text Color A (Main)</p>
+            <p class="text-xs font-body text-text-b font-mono">rgba(49, 49, 49, 1)</p>
+            <p class="text-xs font-body text-text-b font-mono">#313131</p>
+            <p class="text-xs font-body text-purple-40">text-text-a</p>
+          </div>
+        </div>
+
+        <!-- Text B -->
+        <div class="space-y-3">
+          <div class="h-32 rounded-xl bg-text-b flex items-center justify-center">
+            <span class="text-cleric-white font-body font-semibold">Text B</span>
+          </div>
+          <div class="space-y-1">
+            <p class="text-sm font-body font-semibold text-text-a">Text Color B (Secondary)</p>
+            <p class="text-xs font-body text-text-b font-mono">rgba(107, 107, 107, 1)</p>
+            <p class="text-xs font-body text-text-b font-mono">#6B6B6B</p>
+            <p class="text-xs font-body text-purple-40">text-text-b</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secondary Colors -->
+    <section class="space-y-6">
+      <h2 class="text-3xl font-heading text-text-a mb-6">Secondary Colors</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Purple 40 -->
+        <div class="space-y-3">
+          <div class="h-32 rounded-xl bg-purple-40 flex items-center justify-center">
+            <span class="text-cleric-white font-body font-semibold">Purple 40</span>
+          </div>
+          <div class="space-y-1">
+            <p class="text-sm font-body font-semibold text-text-a">Purple 40 (Accent)</p>
+            <p class="text-xs font-body text-text-b font-mono">rgba(194, 156, 241, 1)</p>
+            <p class="text-xs font-body text-text-b font-mono">#C29CF1</p>
+            <p class="text-xs font-body text-purple-40">bg-purple-40</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography Examples -->
+    <section class="space-y-6">
+      <h2 class="text-3xl font-heading text-text-a mb-6">Typography with Colors</h2>
+
+      <div class="bg-cleric-white border border-cleric-gray-a rounded-2xl p-8 space-y-6">
+        <div>
+          <h3 class="text-2xl font-heading text-text-a mb-2">Heading with Text A</h3>
+          <p class="text-base font-body text-text-a">
+            This is body text using Text Color A (rgba(49, 49, 49, 1)) - the main text color for primary content.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-heading text-text-b mb-2">Heading with Text B</h3>
+          <p class="text-base font-body text-text-b">
+            This is body text using Text Color B (rgba(107, 107, 107, 1)) - the secondary text color for supporting content.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-heading text-purple-40 mb-2">Heading with Purple Accent</h3>
+          <p class="text-base font-body text-text-a">
+            <span class="text-purple-40 font-semibold">Purple 40</span> can be used for accents, highlights, and interactive elements.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Semantic Color Tokens -->
+    <section class="space-y-6">
+      <h2 class="text-3xl font-heading text-text-a mb-6">Semantic Tokens</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Background/Foreground -->
+        <div class="space-y-3">
+          <div class="h-32 rounded-xl bg-background border border-border flex items-center justify-center">
+            <span class="text-foreground font-body font-semibold">Background</span>
+          </div>
+          <div class="space-y-1">
+            <p class="text-sm font-body font-semibold text-text-a">Background & Foreground</p>
+            <p class="text-xs font-body text-purple-40">bg-background text-foreground</p>
+          </div>
+        </div>
+
+        <!-- Primary -->
+        <div class="space-y-3">
+          <div class="h-32 rounded-xl bg-primary flex items-center justify-center">
+            <span class="text-primary-foreground font-body font-semibold">Primary</span>
+          </div>
+          <div class="space-y-1">
+            <p class="text-sm font-body font-semibold text-text-a">Primary (Black)</p>
+            <p class="text-xs font-body text-purple-40">bg-primary text-primary-foreground</p>
+          </div>
+        </div>
+
+        <!-- Secondary -->
+        <div class="space-y-3">
+          <div class="h-32 rounded-xl bg-secondary flex items-center justify-center">
+            <span class="text-secondary-foreground font-body font-semibold">Secondary</span>
+          </div>
+          <div class="space-y-1">
+            <p class="text-sm font-body font-semibold text-text-a">Secondary (Purple)</p>
+            <p class="text-xs font-body text-purple-40">bg-secondary text-secondary-foreground</p>
+          </div>
+        </div>
+
+        <!-- Muted -->
+        <div class="space-y-3">
+          <div class="h-32 rounded-xl bg-muted flex items-center justify-center">
+            <span class="text-muted-foreground font-body font-semibold">Muted</span>
+          </div>
+          <div class="space-y-1">
+            <p class="text-sm font-body font-semibold text-text-a">Muted (Gray A)</p>
+            <p class="text-xs font-body text-purple-40">bg-muted text-muted-foreground</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Usage Examples -->
+    <section class="space-y-6">
+      <h2 class="text-3xl font-heading text-text-a mb-6">Usage Examples</h2>
+
+      <div class="space-y-4">
+        <!-- Example 1: Card -->
+        <div class="bg-card border border-border rounded-xl p-6">
+          <h3 class="text-xl font-heading text-card-foreground mb-2">Card Component</h3>
+          <p class="text-sm font-body text-text-b">Using semantic card tokens for consistent styling.</p>
+        </div>
+
+        <!-- Example 2: Highlight Box -->
+        <div class="bg-purple-40/10 border border-purple-40 rounded-xl p-6">
+          <h3 class="text-xl font-heading text-text-a mb-2">Highlighted Content</h3>
+          <p class="text-sm font-body text-text-b">Using purple accent with low opacity for backgrounds.</p>
+        </div>
+
+        <!-- Example 3: Muted Section -->
+        <div class="bg-muted rounded-xl p-6">
+          <h3 class="text-xl font-heading text-text-a mb-2">Muted Section</h3>
+          <p class="text-sm font-body text-muted-foreground">Using muted colors for less prominent content.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Color Combinations -->
+    <section class="space-y-6">
+      <h2 class="text-3xl font-heading text-text-a mb-6">Recommended Combinations</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-cleric-white border border-cleric-gray-a rounded-xl p-6">
+          <h4 class="font-body font-semibold text-text-a mb-2">Light Background</h4>
+          <ul class="space-y-1 text-sm font-body">
+            <li class="text-text-a">• Primary text: text-a</li>
+            <li class="text-text-b">• Secondary text: text-b</li>
+            <li class="text-purple-40">• Accent: purple-40</li>
+          </ul>
+        </div>
+
+        <div class="bg-cleric-black rounded-xl p-6">
+          <h4 class="font-body font-semibold text-cleric-white mb-2">Dark Background</h4>
+          <ul class="space-y-1 text-sm font-body">
+            <li class="text-cleric-white">• Primary text: cleric-white</li>
+            <li class="text-cleric-gray-a">• Secondary text: cleric-gray-a</li>
+            <li class="text-purple-40">• Accent: purple-40</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

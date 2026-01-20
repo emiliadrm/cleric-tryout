@@ -1,0 +1,277 @@
+---
+import Button from '../components/ui/Button.astro';
+import '../global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button System - Light Mode</title>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 p-8">
+  <div class="max-w-6xl mx-auto space-y-12">
+
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h1 class="text-5xl font-heading text-white mb-4">Button System</h1>
+      <p class="text-lg text-gray-300 font-body">Light Mode Variants</p>
+    </div>
+
+    <!-- Primary Buttons -->
+    <section class="space-y-8">
+      <h2 class="text-3xl font-heading text-white mb-6">Primary Buttons</h2>
+
+      <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 space-y-6">
+        <div>
+          <h3 class="text-xl text-white mb-4 font-body font-semibold">Medium Size</h3>
+          <div class="flex gap-4 items-center flex-wrap">
+            <Button type="primary" size="medium" mode="light">
+              Button Text
+            </Button>
+            <span class="text-gray-400 text-sm font-body">Default: bg-white, hover: rgba(236,236,236,0.9)</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl text-white mb-4 font-body font-semibold">Large Size</h3>
+          <div class="flex gap-4 items-center flex-wrap">
+            <Button type="primary" size="large" mode="light">
+              Button Text
+            </Button>
+            <span class="text-gray-400 text-sm font-body">h: 49px, px: 32px, py: 12px</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secondary Buttons -->
+    <section class="space-y-8">
+      <h2 class="text-3xl font-heading text-white mb-6">Secondary Buttons</h2>
+
+      <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 space-y-6">
+        <div>
+          <h3 class="text-xl text-white mb-4 font-body font-semibold">Medium Size (Default Usage)</h3>
+          <div class="flex gap-4 items-center flex-wrap">
+            <Button type="secondary" size="medium" mode="light">
+              Button Text
+            </Button>
+            <span class="text-gray-400 text-sm font-body">bg: rgba(255,255,255,0.05), border: 1px white, backdrop-blur: 4px</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl text-white mb-4 font-body font-semibold">Large Size (Default Usage)</h3>
+          <div class="flex gap-4 items-center flex-wrap">
+            <Button type="secondary" size="large" mode="light">
+              Button Text
+            </Button>
+            <span class="text-gray-400 text-sm font-body">h: 49px, hover: rgba(255,255,255,0.12)</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl text-white mb-4 font-body font-semibold">Small Size (Navbar Usage)</h3>
+          <div class="flex gap-4 items-center flex-wrap">
+            <Button type="secondary" size="small" mode="light" usage="navbar">
+              Button Text
+            </Button>
+            <span class="text-gray-400 text-sm font-body">bg: rgba(255,255,255,0.2), no border, hover: 0.3</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- All Sizes Comparison -->
+    <section class="space-y-8">
+      <h2 class="text-3xl font-heading text-white mb-6">Size Comparison</h2>
+
+      <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
+        <div class="flex gap-4 items-center flex-wrap">
+          <Button type="primary" size="small" mode="light">
+            Small (33px)
+          </Button>
+          <Button type="primary" size="medium" mode="light">
+            Medium (41px)
+          </Button>
+          <Button type="primary" size="large" mode="light">
+            Large (49px)
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specs Table -->
+    <section class="space-y-8">
+      <h2 class="text-3xl font-heading text-white mb-6">Technical Specifications</h2>
+
+      <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 overflow-x-auto">
+        <table class="w-full text-left text-white font-body">
+          <thead class="border-b border-white/20">
+            <tr>
+              <th class="pb-4 font-semibold">Type</th>
+              <th class="pb-4 font-semibold">Size</th>
+              <th class="pb-4 font-semibold">Height</th>
+              <th class="pb-4 font-semibold">Padding X</th>
+              <th class="pb-4 font-semibold">Padding Y</th>
+              <th class="pb-4 font-semibold">Border Radius</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/10">
+            <tr class="text-gray-300">
+              <td class="py-3">Primary/Secondary</td>
+              <td class="py-3">Small</td>
+              <td class="py-3">33px</td>
+              <td class="py-3">16px</td>
+              <td class="py-3">6px</td>
+              <td class="py-3">150px</td>
+            </tr>
+            <tr class="text-gray-300">
+              <td class="py-3">Primary/Secondary</td>
+              <td class="py-3">Medium</td>
+              <td class="py-3">41px</td>
+              <td class="py-3">24px</td>
+              <td class="py-3">10px</td>
+              <td class="py-3">150px</td>
+            </tr>
+            <tr class="text-gray-300">
+              <td class="py-3">Primary/Secondary</td>
+              <td class="py-3">Large</td>
+              <td class="py-3">49px</td>
+              <td class="py-3">32px</td>
+              <td class="py-3">12px</td>
+              <td class="py-3">123.15px</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Dark Mode Buttons -->
+    <section class="space-y-8 mt-24">
+      <div class="text-center mb-8">
+        <h1 class="text-5xl font-heading text-white mb-4">Dark Mode Buttons</h1>
+        <p class="text-lg text-gray-300 font-body">For light backgrounds</p>
+      </div>
+    </section>
+
+    <!-- Dark Primary Buttons -->
+    <section class="space-y-8">
+      <h2 class="text-3xl font-heading text-white mb-6">Dark Primary Buttons</h2>
+
+      <div class="bg-white rounded-2xl p-8 space-y-6">
+        <div>
+          <h3 class="text-xl text-gray-900 mb-4 font-body font-semibold">Medium Size</h3>
+          <div class="flex gap-4 items-center flex-wrap">
+            <Button type="primary" size="medium" mode="dark">
+              Button Text
+            </Button>
+            <span class="text-gray-600 text-sm font-body">Default: bg-black, hover: rgba(0,0,0,0.8)</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl text-gray-900 mb-4 font-body font-semibold">Large Size</h3>
+          <div class="flex gap-4 items-center flex-wrap">
+            <Button type="primary" size="large" mode="dark">
+              Button Text
+            </Button>
+            <span class="text-gray-600 text-sm font-body">h: 49px, px: 32px, py: 12px</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dark Secondary Buttons -->
+    <section class="space-y-8">
+      <h2 class="text-3xl font-heading text-white mb-6">Dark Secondary Buttons</h2>
+
+      <div class="bg-white rounded-2xl p-8 space-y-6">
+        <div>
+          <h3 class="text-xl text-gray-900 mb-4 font-body font-semibold">Medium Size (Default Usage)</h3>
+          <div class="flex gap-4 items-center flex-wrap">
+            <Button type="secondary" size="medium" mode="dark">
+              Button Text
+            </Button>
+            <span class="text-gray-600 text-sm font-body">bg: rgba(255,255,255,0.05), border: rgba(0,0,0,0.5), backdrop-blur: 4px</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl text-gray-900 mb-4 font-body font-semibold">Large Size (Default Usage)</h3>
+          <div class="flex gap-4 items-center flex-wrap">
+            <Button type="secondary" size="large" mode="dark">
+              Button Text
+            </Button>
+            <span class="text-gray-600 text-sm font-body">h: 49px, hover: rgba(0,0,0,0.1)</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl text-gray-900 mb-4 font-body font-semibold">Small Size (Navbar Usage)</h3>
+          <div class="flex gap-4 items-center flex-wrap">
+            <Button type="secondary" size="small" mode="dark" usage="navbar">
+              Button Text
+            </Button>
+            <span class="text-gray-600 text-sm font-body">bg: rgba(0,0,0,0.1), no border, hover: rgba(0,0,0,0.2)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mode Comparison -->
+    <section class="space-y-8">
+      <h2 class="text-3xl font-heading text-white mb-6">Light vs Dark Comparison</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Light on dark background -->
+        <div class="bg-gray-900 rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl text-white mb-4 font-body font-semibold">Light Mode (on dark bg)</h3>
+          <div class="space-y-3">
+            <Button type="primary" size="medium" mode="light">
+              Primary
+            </Button>
+            <Button type="secondary" size="medium" mode="light">
+              Secondary
+            </Button>
+            <Button type="secondary" size="small" mode="light" usage="navbar">
+              Navbar
+            </Button>
+          </div>
+        </div>
+
+        <!-- Dark on light background -->
+        <div class="bg-white rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl text-gray-900 mb-4 font-body font-semibold">Dark Mode (on light bg)</h3>
+          <div class="space-y-3">
+            <Button type="primary" size="medium" mode="dark">
+              Primary
+            </Button>
+            <Button type="secondary" size="medium" mode="dark">
+              Secondary
+            </Button>
+            <Button type="secondary" size="small" mode="dark" usage="navbar">
+              Navbar
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Animation Specs -->
+    <section class="space-y-8">
+      <h2 class="text-3xl font-heading text-white mb-6">Animation</h2>
+
+      <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
+        <ul class="space-y-2 text-gray-300 font-body">
+          <li>• <span class="text-white font-semibold">Duration:</span> 100ms</li>
+          <li>• <span class="text-white font-semibold">Timing:</span> ease-out</li>
+          <li>• <span class="text-white font-semibold">Property:</span> background-color</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

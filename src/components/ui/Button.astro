@@ -1,0 +1,86 @@
+---
+export interface Props {
+  type?: 'primary' | 'secondary';
+  size?: 'small' | 'medium' | 'large';
+  mode?: 'light' | 'dark';
+  usage?: 'default' | 'navbar';
+  as?: 'button' | 'a';
+  href?: string;
+  class?: string;
+}
+
+const {
+  type = 'primary',
+  size = 'medium',
+  mode = 'light',
+  usage = 'default',
+  as = 'button',
+  href,
+  class: className = '',
+  ...rest
+} = Astro.props;
+
+const Tag = as;
+
+// Base styles
+const baseStyles = 'inline-flex items-center justify-center gap-2 rounded-full transition-all duration-100 ease-out font-body font-medium whitespace-nowrap';
+
+// Size variants
+const sizeStyles = {
+  small: 'px-4 py-1.5 text-sm h-[33px]', // 6px top/bottom, 16px left/right
+  medium: 'px-6 py-2.5 text-base h-[41px]', // 10px top/bottom, 24px left/right
+  large: 'px-8 py-3 text-lg h-[49px]' // 12px top/bottom, 32px left/right
+};
+
+// Primary button styles (light mode)
+const primaryLight = {
+  default: 'bg-white text-black hover:bg-[rgba(236,236,236,0.9)]',
+};
+
+// Secondary button styles (light mode)
+const secondaryLight = {
+  default: usage === 'navbar'
+    ? 'bg-white/20 text-white backdrop-blur-[4px] hover:bg-white/30'
+    : 'bg-white/5 text-white border border-white backdrop-blur-[4px] hover:bg-[rgba(255,255,255,0.12)]',
+};
+
+// Primary button styles (dark mode)
+const primaryDark = {
+  default: 'bg-black text-white hover:bg-black/80',
+};
+
+// Secondary button styles (dark mode)
+const secondaryDark = {
+  default: usage === 'navbar'
+    ? 'bg-black/10 text-black backdrop-blur-[4px] hover:bg-black/20'
+    : 'bg-white/5 text-black border border-black/50 backdrop-blur-[4px] hover:bg-[rgba(0,0,0,0.1)]',
+};
+
+// Combine styles based on props
+let variantStyles = '';
+if (mode === 'light') {
+  if (type === 'primary') {
+    variantStyles = primaryLight.default;
+  } else if (type === 'secondary') {
+    variantStyles = secondaryLight.default;
+  }
+} else if (mode === 'dark') {
+  if (type === 'primary') {
+    variantStyles = primaryDark.default;
+  } else if (type === 'secondary') {
+    variantStyles = secondaryDark.default;
+  }
+}
+
+const combinedClass = `${baseStyles} ${sizeStyles[size]} ${variantStyles} ${className}`;
+---
+
+{Tag === 'a' ? (
+  <a href={href} class={combinedClass} {...rest}>
+    <slot />
+  </a>
+) : (
+  <button class={combinedClass} {...rest}>
+    <slot />
+  </button>
+)}
