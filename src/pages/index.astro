@@ -1,7 +1,9 @@
 ---
 import AnnouncementBanner from '../components/AnnouncementBanner.astro';
 import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 import Button from '../components/ui/Button.astro';
+import HeroBadgeLink from '../components/ui/HeroBadgeLink.astro';
 import '../global.css';
 ---
 
@@ -26,139 +28,127 @@ import '../global.css';
   <Navbar />
 
   <!-- Hero Section with Background -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <section class="relative min-h-screen overflow-hidden">
 
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
       <img
         src="/images/background.jpg"
         alt="Background"
-        class="absolute bottom-[-20%] left-0 right-0 w-full h-[150%] object-cover object-[center_top]"
+        class="absolute bottom-[-15%] left-0 right-0 w-full h-[115%] md:bottom-[-20%] md:h-[130%] lg:bottom-[-25%] lg:h-[155%] object-cover object-[center_top]"
       />
       <!-- White gradient fade at bottom for transition -->
-      <div class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-cleric-white via-cleric-white/80 to-transparent z-10"></div>
+      <div class="absolute bottom-0 left-0 right-0 h-24 md:h-48 bg-gradient-to-t from-cleric-white via-cleric-white/80 to-transparent z-10"></div>
     </div>
 
     <!-- Content -->
-    <div class="relative z-10 container mx-auto px-4 lg:px-8 text-center">
-      <div class="max-w-4xl mx-auto space-y-8">
+    <div class="relative z-10 container mx-auto px-4 lg:px-8 text-center pt-24 md:pt-32 lg:pt-40 pb-12">
+      <div class="max-w-4xl mx-auto space-y-6 md:space-y-8">
+
+        <!-- Hero Badge Link -->
+        <HeroBadgeLink
+          badgeText="Press release"
+          mainText="Cleric launches the first self-learning AI SRE"
+        />
 
         <!-- Title -->
         <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading text-cleric-white leading-tight">
-          Transform Your Workflow with AI
+          The AI SRE that learns from your engineers
         </h1>
 
         <!-- Subtitle -->
-        <p class="text-xl md:text-2xl text-cleric-gray-a font-body max-w-2xl mx-auto">
-          Unlock the power of artificial intelligence to streamline operations, boost productivity, and drive innovation in your business.
+        <p class="text-base md:text-lg lg:text-xl text-cleric-white font-body font-normal max-w-2xl mx-auto">
+          Cleric investigates production issues, captures what works, and makes your whole team faster.
         </p>
 
         <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-          <Button type="primary" size="large" mode="light">
-            Get Started Free
+        <div class="flex flex-row items-center justify-center gap-4 pt-4">
+          <Button type="primary" size="medium" mode="light">
+            Start for Free
           </Button>
-          <Button type="secondary" size="large" mode="light">
-            Watch Demo
+          <Button type="secondary" size="medium" mode="light">
+            Request Demo
           </Button>
         </div>
 
-        <!-- Social Proof / Stats -->
-        <div class="grid grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto">
-          <div class="space-y-2">
-            <p class="text-3xl md:text-4xl font-heading text-cleric-white">10K+</p>
-            <p class="text-sm text-cleric-gray-a font-body">Active Users</p>
-          </div>
-          <div class="space-y-2">
-            <p class="text-3xl md:text-4xl font-heading text-cleric-white">99.9%</p>
-            <p class="text-sm text-cleric-gray-a font-body">Uptime</p>
-          </div>
-          <div class="space-y-2">
-            <p class="text-3xl md:text-4xl font-heading text-cleric-white">24/7</p>
-            <p class="text-sm text-cleric-gray-a font-body">Support</p>
-          </div>
-        </div>
-
       </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-      <svg class="w-6 h-6 text-cleric-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-      </svg>
+    <!-- Hero Slack Images -->
+    <div class="relative z-10 container mx-auto px-4 lg:px-8 mt-8 md:mt-12 mt-4">
+      <!-- Desktop: Both images with normal on bottom right -->
+      <div class="hidden md:block relative md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto">
+        <img
+          src="/images/hero_slack-dt.png"
+          alt="Cleric AI Slack Integration"
+          class="w-full h-auto drop-shadow-2xl"
+        />
+        <img
+          src="/images/hero_slack.png"
+          alt="Cleric AI Slack Details"
+          class="absolute bottom-0 xl:-right-[8%] xl:w-[30%] h-auto drop-shadow-2xl md:w-[28%] md:-right-[5%]"
+        />
+      </div>
+
+      <!-- Mobile: Single centered image -->
+      <div class="md:hidden max-w-md mx-auto">
+        <img
+          src="/images/hero_slack-mobile.png"
+          alt="Cleric AI Slack Integration"
+          class="w-full h-auto drop-shadow-xl"
+        />
+      </div>
     </div>
+
+    <!-- White gradient fade at bottom -->
+    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-cleric-white to-transparent z-10"></div>
 
   </section>
 
-  <!-- Features Section Placeholder -->
-  <section id="features" class="py-20 bg-cleric-white">
+  <!-- Stats Section -->
+  <section class="py-16 md:py-20 bg-cleric-white">
     <div class="container mx-auto px-4 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-4xl md:text-5xl font-heading text-text-a mb-4">
-          Powerful Features
-        </h2>
-        <p class="text-lg text-text-b font-body">
-          Everything you need to supercharge your business with AI
-        </p>
-      </div>
+      <!-- Mobile: Column (< 768px) -->
+      <!-- Tablet: Wrap with 2 on top, 1 on bottom (768px - 1023px) -->
+      <!-- Desktop: Single row with justify-center (>= 1024px) -->
+      <div class="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center gap-12 lg:gap-6 max-w-[1192px] mx-auto">
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Feature 1 -->
-        <div class="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
-          <div class="w-12 h-12 bg-purple-40/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">🚀</span>
+        <!-- Stat 1 -->
+        <div class="text-center w-[20rem] flex-shrink-0">
+          <div class="font-body font-semibold text-[32px] md:text-[40px] lg:text-[44px] leading-[115%] tracking-[-0.005em] text-text-a mb-2">
+            5 min
           </div>
-          <h3 class="text-xl font-body font-semibold text-text-a mb-2">
-            Fast Performance
-          </h3>
-          <p class="text-text-b font-body">
-            Lightning-fast AI processing that scales with your needs.
-          </p>
+          <div class="font-body font-normal text-base md:text-lg leading-[140%] text-text-b">
+            Time to Root Cause
+          </div>
         </div>
 
-        <!-- Feature 2 -->
-        <div class="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
-          <div class="w-12 h-12 bg-purple-40/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">🔒</span>
+        <!-- Stat 2 -->
+        <div class="text-center w-[20rem] flex-shrink-0">
+          <div class=" font-body font-semibold text-[32px] md:text-[40px] lg:text-[44px] leading-[115%] tracking-[-0.005em] text-text-a mb-2">
+            92%
           </div>
-          <h3 class="text-xl font-body font-semibold text-text-a mb-2">
-            Secure & Private
-          </h3>
-          <p class="text-text-b font-body">
-            Enterprise-grade security to keep your data safe and compliant.
-          </p>
+          <div class="font-body font-normal text-base md:text-lg leading-[140%] text-text-b">
+            Actionable Findings
+          </div>
         </div>
 
-        <!-- Feature 3 -->
-        <div class="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
-          <div class="w-12 h-12 bg-purple-40/10 rounded-lg flex items-center justify-center mb-4">
-            <span class="text-2xl">⚡</span>
+        <!-- Stat 3 -->
+        <div class="text-center w-[20rem] flex-shrink-0 md:w-full lg:w-auto">
+          <div class="font-body font-semibold text-[32px] md:text-[40px] lg:text-[44px] leading-[115%] tracking-[-0.005em] text-text-a mb-2">
+            200,000+
           </div>
-          <h3 class="text-xl font-body font-semibold text-text-a mb-2">
-            Easy Integration
-          </h3>
-          <p class="text-text-b font-body">
-            Seamlessly integrate with your existing tools and workflows.
-          </p>
+          <div class="font-body font-normal text-base md:text-lg leading-[140%] text-text-b">
+            Production-Grade Investigations
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Pricing Section Placeholder -->
-  <section id="pricing" class="py-20 bg-muted">
-    <div class="container mx-auto px-4 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto">
-        <h2 class="text-4xl md:text-5xl font-heading text-text-a mb-4">
-          Simple, Transparent Pricing
-        </h2>
-        <p class="text-lg text-text-b font-body">
-          Choose the plan that's right for you
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- Footer -->
+  <Footer />
 
 </body>
 </html>

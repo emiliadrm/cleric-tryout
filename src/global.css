@@ -16,9 +16,11 @@
     /* Text Colors */
     --text-a: 0 0% 19.2%; /* rgba(49, 49, 49, 1) - Main text */
     --text-b: 0 0% 42%; /* rgba(107, 107, 107, 1) - Secondary text */
+    --text-d: 0 0% 100%; /* rgba(255, 255, 255, 1) - White text */
 
     /* Secondary Colors */
     --purple-40: 265 71% 78%; /* rgba(194, 156, 241, 1) */
+    --blue-10: 243 100% 93%; /* rgba(225, 222, 254, 1) */
 
     /* Background & Foreground */
     --background: var(--primary-white);

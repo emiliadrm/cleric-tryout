@@ -2,25 +2,25 @@
 import Button from './ui/Button.astro';
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300">
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300">
   <div class="container mx-auto px-4 md:px-10 2xl:px-20">
     <div class="flex items-center justify-between h-14">
 
       <!-- Logo (Left) -->
       <a href="/" class="flex items-center gap-3 group">
-        <img src="/images/logo.svg" alt="Cleric AI" class="h-5 lg:h-6 w-auto" />
+        <img id="navbar-logo" src="/images/logo.svg" alt="Cleric AI" class="h-5 md:h-6 w-auto" />
       </a>
 
       <!-- Desktop Navigation (Center) -->
-      <div class="hidden lg:flex items-center gap-8">
+      <div class="hidden md:flex items-center gap-8">
         <!-- Product (Simple Link) -->
-        <a href="#product" class="text-cleric-white hover:text-cleric-gray-a transition-colors font-body text-sm">
+        <a href="#product" class="text-cleric-white hover:text-purple-40 transition-colors font-body text-sm">
           Product
         </a>
 
         <!-- Solutions (with dropdown) -->
         <div class="relative group">
-          <button class="text-cleric-white hover:text-cleric-gray-a transition-colors font-body text-sm flex items-center gap-1">
+          <button class="text-cleric-white hover:text-purple-40 transition-colors font-body text-sm flex items-center gap-1">
             Solutions
             <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -28,14 +28,14 @@ import Button from './ui/Button.astro';
           </button>
           <!-- Dropdown -->
           <div class="absolute top-full left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-            <div class="bg-cleric-black/90 backdrop-blur-lg border border-white/10 rounded-xl shadow-xl py-2">
-              <a href="#solution-1" class="block px-4 py-2 text-sm text-cleric-gray-a hover:text-cleric-white hover:bg-white/5 transition-colors">
+            <div class="dropdown-menu bg-cleric-white backdrop-blur-lg border border-black/10 rounded-xl shadow-xl py-2">
+              <a href="#solution-1" class="dropdown-link block px-4 py-2 text-sm text-text-a hover:text-cleric-black hover:bg-black/5 transition-colors">
                 Solution 1
               </a>
-              <a href="#solution-2" class="block px-4 py-2 text-sm text-cleric-gray-a hover:text-cleric-white hover:bg-white/5 transition-colors">
+              <a href="#solution-2" class="dropdown-link block px-4 py-2 text-sm text-text-a hover:text-cleric-black hover:bg-black/5 transition-colors">
                 Solution 2
               </a>
-              <a href="#solution-3" class="block px-4 py-2 text-sm text-cleric-gray-a hover:text-cleric-white hover:bg-white/5 transition-colors">
+              <a href="#solution-3" class="dropdown-link block px-4 py-2 text-sm text-text-a hover:text-cleric-black hover:bg-black/5 transition-colors">
                 Solution 3
               </a>
             </div>
@@ -44,7 +44,7 @@ import Button from './ui/Button.astro';
 
         <!-- Resources (with dropdown) -->
         <div class="relative group">
-          <button class="text-cleric-white hover:text-cleric-gray-a transition-colors font-body text-sm flex items-center gap-1">
+          <button class="text-cleric-white hover:text-purple-40 transition-colors font-body text-sm flex items-center gap-1">
             Resources
             <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -52,14 +52,14 @@ import Button from './ui/Button.astro';
           </button>
           <!-- Dropdown -->
           <div class="absolute top-full left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-            <div class="bg-cleric-black/90 backdrop-blur-lg border border-white/10 rounded-xl shadow-xl py-2">
-              <a href="#blog" class="block px-4 py-2 text-sm text-cleric-gray-a hover:text-cleric-white hover:bg-white/5 transition-colors">
+            <div class="dropdown-menu bg-cleric-white backdrop-blur-lg border border-black/10 rounded-xl shadow-xl py-2">
+              <a href="#blog" class="dropdown-link block px-4 py-2 text-sm text-text-a hover:text-cleric-black hover:bg-black/5 transition-colors">
                 Blog
               </a>
-              <a href="#docs" class="block px-4 py-2 text-sm text-cleric-gray-a hover:text-cleric-white hover:bg-white/5 transition-colors">
+              <a href="#docs" class="dropdown-link block px-4 py-2 text-sm text-text-a hover:text-cleric-black hover:bg-black/5 transition-colors">
                 Documentation
               </a>
-              <a href="#case-studies" class="block px-4 py-2 text-sm text-cleric-gray-a hover:text-cleric-white hover:bg-white/5 transition-colors">
+              <a href="#case-studies" class="dropdown-link block px-4 py-2 text-sm text-text-a hover:text-cleric-black hover:bg-black/5 transition-colors">
                 Case Studies
               </a>
             </div>
@@ -67,12 +67,12 @@ import Button from './ui/Button.astro';
         </div>
 
         <!-- About -->
-        <a href="#about" class="text-cleric-white hover:text-cleric-gray-a transition-colors font-body text-sm">
+        <a href="#about" class="text-cleric-white hover:text-purple-40 transition-colors font-body text-sm">
           About
         </a>
 
         <!-- Careers -->
-        <a href="#careers" class="text-cleric-white hover:text-cleric-gray-a transition-colors font-body text-sm">
+        <a href="#careers" class="text-cleric-white hover:bg-gray-a transition-colors font-body text-sm">
           Careers
         </a>
         <Button type="secondary" size="small" mode="light" usage="navbar" as="a" href="#request-demo">
@@ -83,7 +83,7 @@ import Button from './ui/Button.astro';
       <!-- Mobile Menu Button -->
       <button
         id="mobile-menu-button"
-        class="lg:hidden p-2 text-cleric-white hover:text-cleric-gray-a transition-colors"
+        class="md:hidden p-2 text-cleric-white hover:text-cleric-gray-a transition-colors"
         aria-label="Toggle menu"
       >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -105,12 +105,14 @@ import Button from './ui/Button.astro';
         </svg>
       </button>
     </div>
+  </div>
 
-    <!-- Mobile Menu -->
-    <div
-      id="mobile-menu"
-      class="hidden lg:hidden border-t border-white/10 py-4"
-    >
+  <!-- Mobile Menu (Outside Container for Full Width) -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-white/10 py-4 bg-cleric-black/50 backdrop-blur-lg"
+  >
+    <div class="container mx-auto px-4 md:px-10 2xl:px-20">
       <div class="flex flex-col gap-4">
         <a href="#product" class="text-cleric-white hover:text-cleric-gray-a transition-colors font-body text-base py-2">
           Product
@@ -165,9 +167,11 @@ import Button from './ui/Button.astro';
         <a href="#careers" class="text-cleric-white hover:text-cleric-gray-a transition-colors font-body text-base py-2">
           Careers
         </a>
-        <Button type="secondary" size="medium" mode="light" usage="navbar" as="a" href="#request-demo" class="w-full">
-          Request Demo
-        </Button>
+        <div>
+          <Button type="secondary" size="medium" mode="light" usage="navbar" as="a" href="#request-demo" class="w-full">
+            Request Demo
+          </Button>
+        </div>
       </div>
     </div>
   </div>
@@ -236,5 +240,88 @@ import Button from './ui/Button.astro';
       menuIcon?.classList.remove('hidden');
       closeIcon?.classList.add('hidden');
     });
+  });
+
+  // Scroll behavior for navbar
+  const navbar = document.getElementById('navbar');
+  // Get only desktop nav links (exclude logo, mobile menu links, and Request Demo button)
+  const desktopNavLinks = Array.from(navbar?.querySelectorAll('a:not(.group)') || []).filter(link => 
+    !mobileMenu?.contains(link) && link.getAttribute('href') !== '#request-demo'
+  );
+  const navButton = navbar?.querySelector('button[id="mobile-menu-button"]');
+  const dropdownButtons = navbar?.querySelectorAll('.relative.group > button'); // Solutions and Resources buttons
+  const demoButton = navbar?.querySelector('a[href="#request-demo"]');
+  const logo = document.getElementById('navbar-logo');
+
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > 50) {
+      // Scrolled down - white background with black text
+      navbar?.classList.remove('bg-transparent');
+      navbar?.classList.add('bg-cleric-white', 'shadow-md');
+
+      // Invert logo to black
+      logo?.classList.add('invert');
+
+      // Change only desktop nav link colors to black with purple hover
+      desktopNavLinks?.forEach(link => {
+        link.classList.remove('text-cleric-white', 'hover:text-white-40');
+        link.classList.add('text-cleric-black', 'hover:text-purple-40');
+      });
+
+      // Change dropdown buttons (Solutions, Resources) to black with purple hover
+      dropdownButtons?.forEach(button => {
+        button.classList.remove('text-cleric-white', 'hover:text-purple-40');
+        button.classList.add('text-cleric-black', 'hover:text-purple-40');
+      });
+
+      // Change mobile menu button color
+      navButton?.classList.remove('text-cleric-white', 'hover:text-cleric-gray-a');
+      navButton?.classList.add('text-cleric-black', 'hover:text-text-a');
+
+      // Change Request Demo button to dark mode styles
+      if (demoButton) {
+        demoButton.classList.remove('bg-white/20', 'text-white', 'hover:bg-white/30', 'backdrop-blur-[4px]');
+        demoButton.classList.add('bg-black/10', 'text-black', 'hover:bg-black/20', 'backdrop-blur-[4px]');
+        // Remove any conflicting hover styles
+        demoButton.style.setProperty('--tw-text-opacity', '1');
+      }
+    } else {
+      // At top - transparent background with white text
+      navbar?.classList.remove('bg-cleric-white', 'shadow-md');
+      navbar?.classList.add('bg-transparent');
+
+      // Remove logo inversion (back to white)
+      logo?.classList.remove('invert');
+
+      // Change only desktop nav link colors back to white with purple hover
+      desktopNavLinks?.forEach(link => {
+        link.classList.remove('text-cleric-black', 'hover:text-purple-40');
+        link.classList.add('text-cleric-white', 'hover:text-purple-40');
+      });
+
+      // Change dropdown buttons back to white with purple hover
+      dropdownButtons?.forEach(button => {
+        button.classList.remove('text-cleric-black', 'hover:text-purple-40');
+        button.classList.add('text-cleric-white', 'hover:text-purple-40');
+      });
+
+      // Change mobile menu button color back
+      navButton?.classList.remove('text-cleric-black', 'hover:text-text-a');
+      navButton?.classList.add('text-cleric-white', 'hover:text-cleric-gray-a');
+
+      // Change Request Demo button back to light mode styles
+      if (demoButton) {
+        demoButton.classList.remove('bg-black/10', 'text-black', 'hover:bg-black/20', 'backdrop-blur-[4px]');
+        demoButton.classList.add('bg-white/20', 'text-white', 'hover:bg-white/30', 'backdrop-blur-[4px]');
+        // Remove any conflicting hover styles
+        demoButton.style.setProperty('--tw-text-opacity', '1');
+      }
+    }
+
+    lastScroll = currentScroll;
   });
 </script>

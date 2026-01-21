@@ -1,0 +1,83 @@
+---
+export interface Props {
+  badgeText?: string;
+  mainText?: string;
+  href?: string;
+  class?: string;
+}
+
+const {
+  badgeText = 'Press release',
+  mainText = 'Cleric launches the first self-learning AI SRE',
+  href = '/blog',
+  class: className = ''
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class={`
+    group
+    flex items-center justify-center
+    w-full max-w-[474px] lg:max-w-[482px]
+    mx-auto
+    rounded-md
+    border border-black/10
+    px-4
+    py-2
+    bg-black/10
+    backdrop-blur-[4px]
+    hover:bg-black/20
+    hover:shadow-lg
+    transition-all duration-200
+    ${className}
+  `}
+>
+  <!-- Badge "Press release" -->
+  <span
+    class="
+      flex-shrink-0
+      w-[101px] md:w-[113px]
+      h-[22px] md:h-[25px]
+      flex items-center justify-center
+      rounded
+      px-3
+      py-1
+      bg-blue-10
+      opacity-80
+      shadow-[0px_3.38px_20.29px_0px_rgba(66,72,70,0.1),0px_3.38px_3.38px_0px_rgba(66,72,70,0.08)]
+    "
+  >
+    <span class="font-body font-medium text-[0.875rem] leading-[120%] tracking-[-0.0025em] text-text-a whitespace-nowrap">
+      {badgeText}
+    </span>
+  </span>
+
+  <!-- Spacer between badge and text: 8px mobile, 12px tablet+ -->
+  <div class="w-2 md:w-3"></div>
+
+  <!-- Main Text -->
+  <span class="font-body font-normal text-[0.75rem] md:text-[0.9375rem] leading-[140%] tracking-[0.01em] text-text-d flex-1 min-w-0 truncate">
+    {mainText}
+  </span>
+
+  <!-- Spacer between text and icon: 6px -->
+  <div class="w-1.5"></div>
+
+  <!-- Arrow Icon -->
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="flex-shrink-0 text-text-d group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+  >
+    <path d="M7 7h10v10"/>
+    <path d="M7 17 17 7"/>
+  </svg>
+</a>

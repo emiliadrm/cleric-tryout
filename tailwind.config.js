@@ -24,9 +24,11 @@ export default {
   			// Text Colors
   			'text-a': 'hsl(var(--text-a))',
   			'text-b': 'hsl(var(--text-b))',
+  			'text-d': 'hsl(var(--text-d))',
 
-  			// Purple
+  			// Secondary Colors
   			'purple-40': 'hsl(var(--purple-40))',
+  			'blue-10': 'hsl(var(--blue-10))',
 
   			// Base tokens
   			background: 'hsl(var(--background))',
