@@ -1,21 +1,16 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import AnnouncementBanner from '../components/AnnouncementBanner.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import Button from '../components/ui/Button.astro';
 import HeroBadgeLink from '../components/ui/HeroBadgeLink.astro';
-import '../global.css';
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cleric AI - Transform Your Workflow</title>
-  <meta name="description" content="AI-powered solutions for modern businesses">
-</head>
-<body class="min-h-screen">
+<Layout
+  title="Cleric AI - The AI SRE that learns from your engineers"
+  description="Cleric investigates production issues, captures what works, and makes your whole team faster. AI-powered solutions for modern businesses."
+>
 
   <!-- Announcement Banner -->
   <AnnouncementBanner 
@@ -28,21 +23,24 @@ import '../global.css';
   <Navbar />
 
   <!-- Hero Section with Background -->
-  <section class="relative min-h-screen overflow-hidden">
+  <main id="main-content" class="flex-1">
+  <section class="relative overflow-hidden" aria-label="Hero section">
 
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
       <img
         src="/images/background.jpg"
-        alt="Background"
+        alt="Hero background showing AI SRE interface"
         class="absolute bottom-[-15%] left-0 right-0 w-full h-[115%] md:bottom-[-20%] md:h-[130%] lg:bottom-[-25%] lg:h-[155%] object-cover object-[center_top]"
+        loading="eager"
+        fetchpriority="high"
       />
       <!-- White gradient fade at bottom for transition -->
       <div class="absolute bottom-0 left-0 right-0 h-24 md:h-48 bg-gradient-to-t from-cleric-white via-cleric-white/80 to-transparent z-10"></div>
     </div>
 
     <!-- Content -->
-    <div class="relative z-10 container mx-auto px-4 lg:px-8 text-center pt-24 md:pt-32 lg:pt-40 pb-12">
+    <div class="relative z-20 container mx-auto px-4 lg:px-8 text-center pt-24 md:pt-32 lg:pt-40 pb-12">
       <div class="max-w-4xl mx-auto space-y-6 md:space-y-8">
 
         <!-- Hero Badge Link -->
@@ -63,10 +61,10 @@ import '../global.css';
 
         <!-- CTA Buttons -->
         <div class="flex flex-row items-center justify-center gap-4 pt-4">
-          <Button type="primary" size="medium" mode="light">
+          <Button type="primary" size="medium" mode="light" as="a" href="#start-free">
             Start for Free
           </Button>
-          <Button type="secondary" size="medium" mode="light">
+          <Button type="secondary" size="medium" mode="light" as="a" href="#request-demo">
             Request Demo
           </Button>
         </div>
@@ -75,18 +73,22 @@ import '../global.css';
     </div>
 
     <!-- Hero Slack Images -->
-    <div class="relative z-10 container mx-auto px-4 lg:px-8 mt-8 md:mt-12 mt-4">
+    <div class="relative z-20 container mx-auto px-4 lg:px-8 mt-8 md:mt-12 mb-[1px] md:mb-0 lg:mb-[1px] xl:mb-0">
       <!-- Desktop: Both images with normal on bottom right -->
       <div class="hidden md:block relative md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto">
         <img
           src="/images/hero_slack-dt.png"
-          alt="Cleric AI Slack Integration"
+          alt="Cleric AI Slack Integration showing automated investigation"
           class="w-full h-auto drop-shadow-2xl"
+          loading="lazy"
+          decoding="async"
         />
         <img
           src="/images/hero_slack.png"
-          alt="Cleric AI Slack Details"
+          alt="Cleric AI Slack detailed response with root cause analysis"
           class="absolute bottom-0 xl:-right-[8%] xl:w-[30%] h-auto drop-shadow-2xl md:w-[28%] md:-right-[5%]"
+          loading="lazy"
+          decoding="async"
         />
       </div>
 
@@ -94,19 +96,21 @@ import '../global.css';
       <div class="md:hidden max-w-md mx-auto">
         <img
           src="/images/hero_slack-mobile.png"
-          alt="Cleric AI Slack Integration"
+          alt="Cleric AI Slack Integration mobile view"
           class="w-full h-auto drop-shadow-xl"
+          loading="lazy"
+          decoding="async"
         />
       </div>
     </div>
 
     <!-- White gradient fade at bottom -->
-    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-cleric-white to-transparent z-10"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-cleric-white via-cleric-white/70 to-transparent z-30"></div>
 
   </section>
 
   <!-- Stats Section -->
-  <section class="py-16 md:py-20 bg-cleric-white">
+  <section class="py-16 md:py-20 bg-cleric-white" aria-label="Company statistics">
     <div class="container mx-auto px-4 lg:px-8">
       <!-- Mobile: Column (< 768px) -->
       <!-- Tablet: Wrap with 2 on top, 1 on bottom (768px - 1023px) -->
@@ -146,9 +150,9 @@ import '../global.css';
       </div>
     </div>
   </section>
+  </main>
 
   <!-- Footer -->
   <Footer />
 
-</body>
-</html>
+</Layout>

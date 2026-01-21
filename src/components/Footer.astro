@@ -4,6 +4,43 @@ export interface Props {
 }
 
 const { class: className = '' } = Astro.props;
+
+// Footer link data structure for DRY principle
+const footerLinks = {
+  cleric: [
+    { href: '#about', label: 'About' },
+    { href: '#careers', label: 'Careers' },
+    { href: '#product', label: 'Product' },
+    { href: '#blog', label: 'Blog' },
+    { href: '#webinars', label: 'Webinars' },
+  ],
+  helpSecurity: [
+    { href: '#trust-center', label: 'Trust Center' },
+    { href: '#terms', label: 'Terms of Use' },
+    { href: '#privacy', label: 'Privacy Policy' },
+  ],
+  useCases: [
+    { href: '#alert-investigation', label: 'Alert Investigation' },
+    { href: '#root-cause', label: 'Root Cause Analysis' },
+    { href: '#fix-recommendation', label: 'Fix Recommendation' },
+    { href: '#on-call', label: 'On-Call Automation' },
+    { href: '#incident-triage', label: 'Incident Triage' },
+    { href: '#deployment-failures', label: 'Deployment Failures' },
+  ]
+};
+
+const socialLinks = [
+  {
+    name: 'LinkedIn',
+    href: 'https://linkedin.com',
+    icon: 'M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z'
+  },
+  {
+    name: 'Twitter',
+    href: 'https://twitter.com',
+    icon: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'
+  }
+];
 ---
 
 <footer class={`bg-cleric-white py-12 ${className}`}>
@@ -13,7 +50,7 @@ const { class: className = '' } = Astro.props;
     <div class="md:hidden">
       <!-- Logo -->
       <div class="mb-8">
-        <img src="/images/logo-vector.svg" alt="Cleric AI" class="h-8 w-auto" />
+        <img src="/images/logo-vector.svg" alt="Cleric AI Logo" class="h-8 w-auto" loading="lazy" />
       </div>
 
       <!-- Row 1: Cleric + Help & Security -->
@@ -21,55 +58,29 @@ const { class: className = '' } = Astro.props;
 
         <!-- Column 1: Cleric -->
         <div>
-          <h3 class="font-body font-semibold text-[15px] leading-[140%] mb-6" style="color: rgba(0, 0, 0, 1);">Cleric</h3>
+          <h3 class="font-body font-semibold text-[15px] leading-[140%] mb-6 text-cleric-black">Cleric</h3>
           <ul class="space-y-2">
-            <li>
-              <a href="#about" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#careers" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                Careers
-              </a>
-            </li>
-            <li>
-              <a href="#product" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                Product
-              </a>
-            </li>
-            <li>
-              <a href="#blog" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href="#webinars" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                Webinars
-              </a>
-            </li>
+            {footerLinks.cleric.map(link => (
+              <li>
+                <a href={link.href} class="font-body font-normal text-[15px] leading-[140%] text-cleric-black hover:text-text-b transition-colors">
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
 
         <!-- Column 2: Help & Security -->
         <div>
-          <h3 class="font-body font-semibold text-[15px] leading-[140%] mb-6" style="color: rgba(0, 0, 0, 1);">Help & Security</h3>
+          <h3 class="font-body font-semibold text-[15px] leading-[140%] mb-6 text-cleric-black">Help & Security</h3>
           <ul class="space-y-2">
-            <li>
-              <a href="#trust-center" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                Trust Center
-              </a>
-            </li>
-            <li>
-              <a href="#terms" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                Terms of Use
-              </a>
-            </li>
-            <li>
-              <a href="#privacy" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                Privacy Policy
-              </a>
-            </li>
+            {footerLinks.helpSecurity.map(link => (
+              <li>
+                <a href={link.href} class="font-body font-normal text-[15px] leading-[140%] text-cleric-black hover:text-text-b transition-colors">
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -77,45 +88,29 @@ const { class: className = '' } = Astro.props;
 
       <!-- Row 2: Use Cases -->
       <div class="mb-8">
-        <h3 class="font-body font-semibold text-[15px] leading-[140%] mb-6" style="color: rgba(0, 0, 0, 1);">Use Cases</h3>
+        <h3 class="font-body font-semibold text-[15px] leading-[140%] mb-6 text-cleric-black">Use Cases</h3>
         <div class="grid grid-cols-2 gap-8">
 
           <!-- Column 1 -->
           <ul class="space-y-2">
-            <li>
-              <a href="#alert-investigation" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                Alert Investigation
-              </a>
-            </li>
-            <li>
-              <a href="#root-cause" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                Root Cause Analysis
-              </a>
-            </li>
-            <li>
-              <a href="#fix-recommendation" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                Fix Recommendation
-              </a>
-            </li>
+            {footerLinks.useCases.slice(0, 3).map(link => (
+              <li>
+                <a href={link.href} class="font-body font-normal text-[15px] leading-[140%] text-cleric-black hover:text-text-b transition-colors">
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
 
           <!-- Column 2 -->
           <ul class="space-y-2">
-            <li>
-              <a href="#on-call" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                On-Call Automation
-              </a>
-            </li>
-            <li>
-              <a href="#incident-triage" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                Incident Triage
-              </a>
-            </li>
-            <li>
-              <a href="#deployment-failures" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                Deployment Failures
-              </a>
-            </li>
+            {footerLinks.useCases.slice(3).map(link => (
+              <li>
+                <a href={link.href} class="font-body font-normal text-[15px] leading-[140%] text-cleric-black hover:text-text-b transition-colors">
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
 
         </div>
@@ -126,20 +121,23 @@ const { class: className = '' } = Astro.props;
 
         <!-- Social Icons -->
         <div class="flex items-center justify-center gap-4">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-text-b hover:text-text-a transition-colors" aria-label="LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-            </svg>
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-text-b hover:text-text-a transition-colors" aria-label="Twitter">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-          </a>
+          {socialLinks.map(social => (
+            <a
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-text-b hover:text-text-a transition-colors"
+              aria-label={social.name}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d={social.icon}/>
+              </svg>
+            </a>
+          ))}
         </div>
 
         <!-- Copyright -->
-        <div class="font-body font-normal text-[15px] leading-[140%] text-center" style="color: rgba(147, 147, 147, 1);">
+        <div class="font-body font-normal text-[15px] leading-[140%] text-center text-[#939393]">
           © Cleric 2025
         </div>
 
@@ -154,97 +152,48 @@ const { class: className = '' } = Astro.props;
 
           <!-- Column 1: Logo -->
           <div>
-            <img src="/images/logo-vector.svg" alt="Cleric AI" class="h-8 w-auto" />
+            <img src="/images/logo-vector.svg" alt="Cleric AI Logo" class="h-8 w-auto" loading="lazy" />
           </div>
 
           <!-- Column 2: Cleric -->
           <div>
-            <h3 class="font-body font-semibold text-[15px] leading-[140%] mb-6" style="color: rgba(0, 0, 0, 1);">Cleric</h3>
+            <h3 class="font-body font-semibold text-[15px] leading-[140%] mb-6 text-cleric-black">Cleric</h3>
             <ul class="space-y-2">
-              <li>
-                <a href="#about" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#careers" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#product" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                  Product
-                </a>
-              </li>
-              <li>
-                <a href="#blog" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#webinars" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                  Webinars
-                </a>
-              </li>
+              {footerLinks.cleric.map(link => (
+                <li>
+                  <a href={link.href} class="font-body font-normal text-[15px] leading-[140%] text-cleric-black hover:text-text-b transition-colors">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           <!-- Column 3: Help & Security -->
           <div>
-            <h3 class="font-body font-semibold text-[15px] leading-[140%] mb-6" style="color: rgba(0, 0, 0, 1);">Help & Security</h3>
+            <h3 class="font-body font-semibold text-[15px] leading-[140%] mb-6 text-cleric-black">Help & Security</h3>
             <ul class="space-y-2">
-              <li>
-                <a href="#trust-center" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                  Trust Center
-                </a>
-              </li>
-              <li>
-                <a href="#terms" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                  Terms of Use
-                </a>
-              </li>
-              <li>
-                <a href="#privacy" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                  Privacy Policy
-                </a>
-              </li>
+              {footerLinks.helpSecurity.map(link => (
+                <li>
+                  <a href={link.href} class="font-body font-normal text-[15px] leading-[140%] text-cleric-black hover:text-text-b transition-colors">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           <!-- Column 4: Use Cases -->
           <div>
-            <h3 class="font-body font-semibold text-[15px] leading-[140%] mb-6" style="color: rgba(0, 0, 0, 1);">Use Cases</h3>
+            <h3 class="font-body font-semibold text-[15px] leading-[140%] mb-6 text-cleric-black">Use Cases</h3>
             <ul class="space-y-2">
-              <li>
-                <a href="#alert-investigation" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                  Alert Investigation
-                </a>
-              </li>
-              <li>
-                <a href="#root-cause" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                  Root Cause Analysis
-                </a>
-              </li>
-              <li>
-                <a href="#fix-recommendation" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                  Fix Recommendation
-                </a>
-              </li>
-              <li>
-                <a href="#on-call" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                  On-Call Automation
-                </a>
-              </li>
-              <li>
-                <a href="#incident-triage" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                  Incident Triage
-                </a>
-              </li>
-              <li>
-                <a href="#deployment-failures" class="font-body font-normal text-[15px] leading-[140%] transition-colors" style="color: rgba(0, 0, 0, 1);" onmouseover="this.style.color='rgba(107, 107, 107, 1)'" onmouseout="this.style.color='rgba(0, 0, 0, 1)'">
-                  Deployment Failures
-                </a>
-              </li>
+              {footerLinks.useCases.map(link => (
+                <li>
+                  <a href={link.href} class="font-body font-normal text-[15px] leading-[140%] text-cleric-black hover:text-text-b transition-colors">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -254,21 +203,24 @@ const { class: className = '' } = Astro.props;
         <div class="grid grid-cols-4 gap-8 lg:gap-16">
           <!-- Column 1: LinkedIn + X Icons (below Logo) -->
           <div class="flex items-center gap-4">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-text-b hover:text-text-a transition-colors" aria-label="LinkedIn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-text-b hover:text-text-a transition-colors" aria-label="Twitter">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
+            {socialLinks.map(social => (
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-text-b hover:text-text-a transition-colors"
+                aria-label={social.name}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d={social.icon}/>
+                </svg>
+              </a>
+            ))}
           </div>
 
           <!-- Column 2: Copyright (below Cleric) -->
           <div class="flex items-center">
-            <div class="font-body font-normal text-[15px] leading-[140%]" style="color: rgba(147, 147, 147, 1);">
+            <div class="font-body font-normal text-[15px] leading-[140%] text-[#939393]">
               © Cleric 2025
             </div>
           </div>
