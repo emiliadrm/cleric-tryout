@@ -20,6 +20,10 @@ const {
 		<meta name="description" content={description} />
 		<meta name="generator" content={Astro.generator} />
 
+		<!-- Prevent search engine indexing -->
+		<meta name="robots" content="noindex, nofollow" />
+		<meta name="googlebot" content="noindex, nofollow" />
+
 		<!-- Favicon -->
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
