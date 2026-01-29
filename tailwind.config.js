@@ -29,6 +29,11 @@ export default {
   			// Secondary Colors
   			'purple-40': 'hsl(var(--purple-40))',
   			'blue-10': 'hsl(var(--blue-10))',
+  			'gray-light': 'hsl(0, 0%, 97.3%)',
+  			'gray-lighter': 'hsl(200, 20%, 97.5%)',
+  			'gray-medium': 'hsl(0, 0%, 91.8%)', // rgba(234, 234, 234, 1)
+  			'gray-card': '#f8f8f8',
+  			'gray-card-border': '#ebebeb',
 
   			// Base tokens
   			background: 'hsl(var(--background))',

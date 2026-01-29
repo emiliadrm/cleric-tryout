@@ -1,0 +1,27 @@
+/* FeatureCard Component Styles */
+.feature-card {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Mobile: full width with margin */
+@media (max-width: 767px) {
+  .feature-card {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+/* Tablet: 642px max */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .feature-card {
+    max-width: 642px;
+  }
+}
+
+/* Desktop: 1192px max */
+@media (min-width: 1024px) {
+  .feature-card {
+    max-width: 1192px;
+  }
+}

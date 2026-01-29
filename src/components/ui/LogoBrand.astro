@@ -1,0 +1,12 @@
+---
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+const logoSrc = `/logos/${name}-logo.svg`;
+---
+
+<div class="logo-brand">
+  <img src={logoSrc} alt={name} />
+</div>

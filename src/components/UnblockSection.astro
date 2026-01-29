@@ -1,0 +1,79 @@
+---
+import Button from './ui/Button.astro';
+---
+
+<!-- Unblock Section -->
+<section class="px-4 md:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
+  <div class="relative w-full md:max-w-[640px] lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-[1192px] mx-auto rounded-2xl overflow-hidden min-h-[537px] md:min-h-[656px] lg:min-h-[515px] flex flex-col justify-center px-8 md:px-12 lg:px-[7.5rem]">
+
+    <!-- Background Image - Mobile -->
+    <img
+      src="/assets/unblock-section-bg.jpg"
+      alt=""
+      aria-hidden="true"
+      class="absolute inset-0 w-[140%] h-[140%] object-cover object-top md:hidden"
+      loading="lazy"
+      decoding="async"
+    />
+
+    <!-- Background Image - Tablet -->
+    <img
+      src="/assets/unblock-section-bg.jpg"
+      alt=""
+      aria-hidden="true"
+      class="hidden md:block lg:hidden absolute inset-0 w-[180%] h-[180%] object-cover object-center -top-[40%]"
+      loading="lazy"
+      decoding="async"
+    />
+
+    <!-- Background Image - Desktop -->
+    <img
+      src="/assets/unblock-section-noblur-bg.jpg"
+      alt=""
+      aria-hidden="true"
+      class="hidden lg:block absolute inset-0 w-[130%] h-[140%] xl:w-[120%] xl:h-[130%] object-cover object-[left_top] -top-[10%]"
+      loading="lazy"
+      decoding="async"
+    />
+
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center text-center md:items-start md:text-left">
+
+      <!-- Text Content -->
+      <div class="flex flex-col gap-4 md:gap-6 lg:gap-4">
+        <h2 class="font-heading text-[32px] md:text-[40px] lg:text-[48px] leading-[115%] tracking-[-0.005em] text-cleric-white">
+          Unblock your engineers.<br />Start in minutes.
+        </h2>
+        <p class="font-body font-normal text-base md:text-lg leading-[140%] text-text-d">
+          Setup takes minutes. Read-only by default.
+        </p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-4 md:gap-[22px] mt-12 md:mt-14 lg:mt-12 w-full md:w-auto">
+        <Button
+          type="primary"
+          size="medium"
+          mode="light"
+          as="a"
+          href="#start-free"
+          class="w-full md:w-auto"
+        >
+          Start for free
+        </Button>
+        <Button
+          type="secondary"
+          size="medium"
+          mode="light"
+          as="a"
+          href="#request-demo"
+          class="w-full md:w-auto"
+        >
+          Request Demo
+        </Button>
+      </div>
+
+    </div>
+
+  </div>
+</section>

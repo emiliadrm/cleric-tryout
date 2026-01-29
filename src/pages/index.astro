@@ -5,6 +5,9 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import Button from '../components/ui/Button.astro';
 import HeroBadgeLink from '../components/ui/HeroBadgeLink.astro';
+import LogoBrand from '../components/ui/LogoBrand.astro';
+import UnblockSection from '../components/UnblockSection.astro';
+import FeatureCard from '../components/FeatureCard.astro';
 ---
 
 <Layout
@@ -150,7 +153,73 @@ import HeroBadgeLink from '../components/ui/HeroBadgeLink.astro';
       </div>
     </div>
   </section>
+   
+   <!-- BlaBlaCar Section -->
+  <section class="w-full h-full mx-auto max-w-4xl p-6 md:p-8 lg:pb-6 xl:pl-10 bg-gradient-to-t from-gray-light to-gray-lighter border rounded-2xl border-gray-medium">
+    <p>BlaBlaCar</p>
+    <blockquote>
+      <p>“I see Cleric functioning as an SRE companion for our Software Engineers. If one team has already solved an alert, we can apply that knowledge elsewhere.”</p>
+    </blockquote>
+    <div>
+      <img class="w-16 h-16 rounded-full " src="/assets/avatar-maxime.png" alt="BlaBlaCar Logo" />
+      <div>
+        <span class="font-semibold">Maxime Fouilleul</span>
+        <span>Head of Infrastructure & Operations | BlaBlaCar</span>
+      </div>
+      <button>Read more</button>
+    </div>
+  </section>
+
+
+
+
+<!-- Integrations Section -->
+<section class="py-16 md:py-20 lg:py-24 px-4 text-center">
+  <h2 class="font-heading text-[32px] md:text-[40px] lg:text-[48px] leading-[115%] tracking-[-0.005em] text-text-a mb-4">
+    Built to plug right into your stack
+  </h2>
+  <p class="font-body font-normal text-base md:text-lg leading-[140%] text-text-b mb-12">
+    Connect your whole stack in an afternoon. Read access by default, write access when you're ready.
+  </p>
+
+  <!-- Logo Grid -->
+  <div class="logos-grid">
+    <!-- Row 1: 8 logos -->
+    <LogoBrand name="kubernetes" />
+    <LogoBrand name="notion" />
+    <LogoBrand name="amazonecs" />
+    <LogoBrand name="pulumi" />
+    <LogoBrand name="terraform" />
+    <LogoBrand name="elastic" />
+    <LogoBrand name="n" />
+    <LogoBrand name="github" />
+    <!-- Row 2: 7 logos -->
+    <LogoBrand name="gitlab" />
+    <LogoBrand name="grafana" />
+    <LogoBrand name="prometheus" />
+    <LogoBrand name="azure" />
+    <LogoBrand name="confluence" />
+    <LogoBrand name="datadog" />
+    <LogoBrand name="googlecloud" />
+  </div>
+</section>
+
+<!-- Feature Card: Skip straight to the answer -->
+<FeatureCard
+  title="Skip straight to the answer"
+  subtitle="Cleric automatically investigates alerts and delivers root cause analysis so you know exactly what's wrong and whether to act."
+  image="/assets/skip-straight-to-answer-section.png"
+  imageAlt="Skip straight to the answer feature"
+  variant="text-left"
+  imageBlur="bottom"
+/>
+
+<!-- Unblock Section -->
+<UnblockSection />
+
   </main>
+
+
 
   <!-- Footer -->
   <Footer />

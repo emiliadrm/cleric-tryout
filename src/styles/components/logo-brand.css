@@ -1,0 +1,24 @@
+/* LogoBrand Component Styles */
+.logo-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(200, 20%, 97.5%);
+  border-radius: 1rem;
+  width: 64px;
+  height: 64px;
+}
+
+.logo-brand img {
+  max-width: 32px;
+  max-height: 32px;
+  width: auto;
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  .logo-brand {
+    width: 80px;
+    height: 80px;
+  }
+}
