@@ -5,7 +5,7 @@ interface Props {
   image: string;
   imageMobile?: string;
   imageAlt?: string;
-  variant?: 'text-left' | 'text-right';
+  variant?: 'text-left' | 'text-right' | 'column';
   imageBlur?: 'bottom' | 'top' | 'left' | 'right' | 'none';
   worksInside?: string; // Logo name for "Works inside your [logo]"
 }
@@ -22,6 +22,7 @@ const {
 } = Astro.props;
 
 const isTextLeft = variant === 'text-left';
+const isColumn = variant === 'column';
 
 // Padding classes for image based on blur direction
 const getImagePadding = () => {
@@ -57,52 +58,114 @@ const getBlurGradient = () => {
 
 const imagePadding = getImagePadding();
 const blurGradient = getBlurGradient();
+
+// Column variant image padding
+const getColumnImagePadding = () => {
+  switch (imageBlur) {
+    case 'bottom':
+      return 'pt-6 px-0 pb-0 md:pt-8';
+    case 'top':
+      return 'pb-0 px-0 pt-0 md:pb-0';
+    case 'left':
+      return 'pt-6 pb-0 pr-0 pl-0 md:pt-8';
+    case 'right':
+      return 'pt-6 pb-0 pl-0 pr-0 md:pt-8';
+    default:
+      return 'pt-6 px-0 pb-0 md:pt-8';
+  }
+};
+
+const columnImagePadding = getColumnImagePadding();
 ---
 
-<div class="feature-card bg-gray-card rounded-2xl border border-gray-card-border overflow-hidden">
-  <div class={`grid grid-cols-1 lg:grid-cols-2 ${isTextLeft ? '' : 'lg:direction-rtl'}`}>
+{isColumn ? (
+  <!-- Column Variant -->
+  <div class="feature-card bg-gray-card rounded-2xl border border-gray-card-border overflow-hidden h-full">
+    <div class="flex flex-col h-full">
+      <!-- Text Content -->
+      <div class="flex flex-col text-left p-6 md:p-8 lg:p-10">
+        <h3 class="font-heading font-normal text-[32px] md:text-[36px] lg:text-[40px] leading-[120%] text-text-a mb-4">
+          {title}
+        </h3>
+        <p class="font-body font-normal text-base md:text-lg leading-[140%] text-text-b">
+          {subtitle}
+        </p>
+      </div>
 
-    <!-- Text Content -->
-    <div class={`flex flex-col justify-center text-left p-6 md:p-8 lg:p-10 ${isTextLeft ? 'lg:order-1' : 'lg:order-2'}`}>
-      <h3 class="font-heading font-normal text-[32px] md:text-[36px] lg:text-[40px] leading-[120%] text-text-a mb-4">
-        {title}
-      </h3>
-      <p class="font-body font-normal text-base md:text-lg leading-[140%] text-text-b">
-        {subtitle}
-      </p>
-      {worksInside && (
-        <div class="flex items-center gap-2 mt-4">
-          <span class="font-body font-normal text-sm leading-[145%] text-text-b">Works inside your</span>
-          <img src={`/logos/${worksInside}-logo.svg`} alt={worksInside} class="h-5 w-auto" />
-        </div>
-      )}
-    </div>
-
-    <!-- Image Content -->
-    <div class={`relative ${imagePadding} ${isTextLeft ? 'lg:order-2' : 'lg:order-1'}`}>
-      {/* Desktop Image */}
-      <img
-        src={image}
-        alt={imageAlt}
-        class={`w-full h-auto ${imageMobile ? 'hidden md:block' : ''}`}
-        loading="lazy"
-        decoding="async"
-      />
-      {/* Mobile Image (if provided) */}
-      {imageMobile && (
+      <!-- Image Content -->
+      <div class={`relative flex-1 ${columnImagePadding}`}>
+        {/* Desktop Image */}
         <img
-          src={imageMobile}
+          src={image}
           alt={imageAlt}
-          class="w-full h-auto md:hidden"
+          class={`w-full h-full object-cover object-top ${imageMobile ? 'hidden lg:block' : ''}`}
           loading="lazy"
           decoding="async"
         />
-      )}
-      {/* Blur gradient overlay */}
-      {imageBlur !== 'none' && (
-        <div class={`absolute ${blurGradient} pointer-events-none`}></div>
-      )}
+        {/* Mobile Image (if provided) */}
+        {imageMobile && (
+          <img
+            src={imageMobile}
+            alt={imageAlt}
+            class="w-full h-full object-cover object-top lg:hidden"
+            loading="lazy"
+            decoding="async"
+          />
+        )}
+        {/* Blur gradient overlay */}
+        {imageBlur !== 'none' && (
+          <div class={`absolute ${blurGradient} pointer-events-none`}></div>
+        )}
+      </div>
     </div>
-
   </div>
-</div>
+) : (
+  <!-- Row Variant (text-left / text-right) -->
+  <div class="feature-card bg-gray-card rounded-2xl border border-gray-card-border overflow-hidden">
+    <div class={`grid grid-cols-1 lg:grid-cols-2 ${isTextLeft ? '' : 'lg:direction-rtl'}`}>
+
+      <!-- Text Content -->
+      <div class={`flex flex-col justify-center text-left p-6 md:p-8 lg:p-10 ${isTextLeft ? 'lg:order-1' : 'lg:order-2'}`}>
+        <h3 class="font-heading font-normal text-[32px] md:text-[36px] lg:text-[40px] leading-[120%] text-text-a mb-4">
+          {title}
+        </h3>
+        <p class="font-body font-normal text-base md:text-lg leading-[140%] text-text-b">
+          {subtitle}
+        </p>
+        {worksInside && (
+          <div class="flex items-center gap-2 mt-4">
+            <span class="font-body font-normal text-sm leading-[145%] text-text-b">Works inside your</span>
+            <img src={`/logos/${worksInside}-logo.svg`} alt={worksInside} class="h-5 w-auto" />
+          </div>
+        )}
+      </div>
+
+      <!-- Image Content -->
+      <div class={`relative ${imagePadding} ${isTextLeft ? 'lg:order-2' : 'lg:order-1'}`}>
+        {/* Desktop Image */}
+        <img
+          src={image}
+          alt={imageAlt}
+          class={`w-full h-auto ${imageMobile ? 'hidden md:block' : ''}`}
+          loading="lazy"
+          decoding="async"
+        />
+        {/* Mobile Image (if provided) */}
+        {imageMobile && (
+          <img
+            src={imageMobile}
+            alt={imageAlt}
+            class="w-full h-auto md:hidden"
+            loading="lazy"
+            decoding="async"
+          />
+        )}
+        {/* Blur gradient overlay */}
+        {imageBlur !== 'none' && (
+          <div class={`absolute ${blurGradient} pointer-events-none`}></div>
+        )}
+      </div>
+
+    </div>
+  </div>
+)}

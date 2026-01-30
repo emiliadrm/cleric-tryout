@@ -247,7 +247,7 @@ import Eyebrow from '../components/ui/Eyebrow.astro';
 
 
 <!-- Cleric in Action Section -->
-<section class="py-20 md:py-[120px] lg:py-[160px] px-4">
+<section class="pt-20 pb-10 md:pt-[120px] md:pb-[60px] lg:pt-[160px] lg:pb-[80px] px-4">
   <div class="max-w-[1192px] mx-auto">
     <!-- Header -->
     <div class="text-center lg:text-center md:text-left">
@@ -306,6 +306,72 @@ import Eyebrow from '../components/ui/Eyebrow.astro';
         variant="text-right"
         imageBlur="left"
       />
+    </div>
+  </div>
+</section>
+
+<!-- Foundations Section -->
+<section class="mt-10 mb-20 md:mt-[60px] md:mb-[120px] lg:mt-20 lg:mb-[160px] px-4">
+  <div class="max-w-[1192px] mx-auto">
+    <!-- Header -->
+    <div class="text-center lg:text-center md:text-left">
+      <Eyebrow text="Foundations" />
+
+      <!-- Title -->
+      <h2 class="font-heading font-normal text-[32px] md:text-[44px] lg:text-[48px] leading-[115%] tracking-[-0.005em] text-text-a mt-4 md:mt-5 lg:mt-6">
+        Simple on the surface. Serious underneath.
+      </h2>
+
+      <!-- Subtitle -->
+      <p class="font-body font-normal text-[18px] md:text-[20px] lg:text-[24px] leading-[125%] tracking-[0.0075em] text-text-b mt-2">
+        Three purpose-built systems that turn alerts into answers—and make every investigation faster than the last.
+      </p>
+    </div>
+
+    <!-- Feature Cards Grid -->
+    <div class="mt-10 md:mt-12 lg:mt-16">
+      <!-- Top Row: 2 cards side by side on desktop -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
+        <!-- Maps your world -->
+        <FeatureCard
+          title="Maps your world"
+          subtitle="Services, dependencies, and ownership mapped automatically. When something breaks, Cleric knows where to look."
+          image="/assets/maps-your-world.png"
+          imageAlt="Maps your world feature"
+          variant="column"
+          imageBlur="none"
+        />
+
+        <!-- Tests every theory -->
+        <FeatureCard
+          title="Tests every theory"
+          subtitle="Correlates signals, tests hypotheses in parallel, tracks confidence. Systematic elimination, not guesswork."
+          image="/assets/test-every-theory-section.png"
+          imageAlt="Tests every theory feature"
+          variant="column"
+          imageBlur="right"
+        />
+      </div>
+
+      <!-- Bottom Row: Full width card -->
+      <div class="mt-6 md:mt-8 lg:mt-12">
+        <FeatureCard
+          title="Compounds over time"
+          subtitle="Every fix teaches Cleric something new. Patterns and context accumulate automatically."
+          image="/assets/compounds-over-time-section.png"
+          imageMobile="/assets/compounds-over-time-section-mobile.png"
+          imageAlt="Compounds over time feature"
+          variant="column"
+          imageBlur="none"
+        />
+      </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="flex justify-center mt-10 md:mt-12 lg:mt-16">
+      <Button type="primary" size="medium" mode="dark" as="a" href="#explore-platform">
+        Explore Full Platform
+      </Button>
     </div>
   </div>
 </section>
