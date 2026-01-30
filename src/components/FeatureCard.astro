@@ -7,6 +7,7 @@ interface Props {
   imageAlt?: string;
   variant?: 'text-left' | 'text-right';
   imageBlur?: 'bottom' | 'top' | 'left' | 'right' | 'none';
+  worksInside?: string; // Logo name for "Works inside your [logo]"
 }
 
 const {
@@ -16,7 +17,8 @@ const {
   imageMobile,
   imageAlt = '',
   variant = 'text-left',
-  imageBlur = 'none'
+  imageBlur = 'none',
+  worksInside
 } = Astro.props;
 
 const isTextLeft = variant === 'text-left';
@@ -68,6 +70,12 @@ const blurGradient = getBlurGradient();
       <p class="font-body font-normal text-base md:text-lg leading-[140%] text-text-b">
         {subtitle}
       </p>
+      {worksInside && (
+        <div class="flex items-center gap-2 mt-4">
+          <span class="font-body font-normal text-sm leading-[145%] text-text-b">Works inside your</span>
+          <img src={`/logos/${worksInside}-logo.svg`} alt={worksInside} class="h-5 w-auto" />
+        </div>
+      )}
     </div>
 
     <!-- Image Content -->

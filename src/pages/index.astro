@@ -8,6 +8,7 @@ import HeroBadgeLink from '../components/ui/HeroBadgeLink.astro';
 import LogoBrand from '../components/ui/LogoBrand.astro';
 import UnblockSection from '../components/UnblockSection.astro';
 import FeatureCard from '../components/FeatureCard.astro';
+import Eyebrow from '../components/ui/Eyebrow.astro';
 ---
 
 <Layout
@@ -154,28 +155,166 @@ import FeatureCard from '../components/FeatureCard.astro';
     </div>
   </section>
    
-   <!-- BlaBlaCar Section -->
-  <section class="w-full h-full mx-auto max-w-4xl p-6 md:p-8 lg:pb-6 xl:pl-10 bg-gradient-to-t from-gray-light to-gray-lighter border rounded-2xl border-gray-medium">
-    <p>BlaBlaCar</p>
-    <blockquote>
-      <p>“I see Cleric functioning as an SRE companion for our Software Engineers. If one team has already solved an alert, we can apply that knowledge elsewhere.”</p>
-    </blockquote>
-    <div>
-      <img class="w-16 h-16 rounded-full " src="/assets/avatar-maxime.png" alt="BlaBlaCar Logo" />
-      <div>
-        <span class="font-semibold">Maxime Fouilleul</span>
-        <span>Head of Infrastructure & Operations | BlaBlaCar</span>
+   
+  <!-- BlaBlaCar Section -->
+  <section class="mx-4 mb-[140px] md:mb-[80px] xl:mb-[120px] md:mx-auto md:max-w-[642px] lg:max-w-[900px] xl:max-w-[1192px] bg-gradient-to-t from-gray-light to-gray-lighter border rounded-2xl border-gray-medium overflow-hidden">
+    <div class="flex flex-col lg:flex-row">
+      <!-- Desktop Image (left side) -->
+      <div class="hidden xl:block lg:flex-shrink-0 lg:w-64 xl:w-80 overflow-hidden">
+        <img
+          class="w-full h-full object-cover object-top scale-125"
+          src="/assets/avatar-maxime.png"
+          alt="Maxime Fouilleul"
+        />
       </div>
-      <button>Read more</button>
+
+      <!-- Content -->
+      <div class="flex flex-col justify-center p-6 md:p-8 lg:p-10">
+        <!-- BlaBlaCar label (mobile/tablet: first, desktop: after quote) -->
+        <p class="font-body font-semibold text-[30px] leading-[140%] tracking-[-0.0025em] text-text-a mb-4 order-1 lg:order-2">
+          BlaBlaCar
+        </p>
+
+        <!-- Quote (mobile/tablet: second, desktop: first) -->
+        <blockquote class="mb-6 order-2 lg:order-1">
+          <p class="font-body font-normal text-[30px] leading-[140%] tracking-[-0.0025em] text-text-a">
+            "I see Cleric functioning as an SRE companion for our Software Engineers. If one team has already solved an alert, we can apply that knowledge elsewhere."
+          </p>
+        </blockquote>
+
+        <!-- Author info and button -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 order-3">
+          <div class="flex items-center gap-4">
+            <!-- Mobile/Tablet Avatar -->
+            <div class="w-16 h-16 rounded-full overflow-hidden xl:hidden flex-shrink-0">
+              <img
+                class="w-full h-full object-cover scale-150 object-top"
+                src="/assets/avatar-maxime.png"
+                alt="Maxime Fouilleul"
+              />
+            </div>
+            <div class="flex flex-col">
+              <span class="font-body font-semibold text-lg leading-[140%] text-text-a">Maxime Fouilleul</span>
+              <span class="font-body font-normal text-lg leading-[140%] text-text-b">Head of Infrastructure & Operations | BlaBlaCar</span>
+            </div>
+          </div>
+          <Button type="primary" size="medium" mode="dark" as="a" href="#read-more">
+            Read case study
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet Cleric Section -->
+  <section class="py-16 md:py-20 lg:py-[120px] bg-gradient-to-b from-gray-light to-gray-lighter">
+    <div class="text-center">
+      <!-- Eyebrow -->
+      <Eyebrow text="How it works" />
+
+      <!-- Title -->
+      <h2 class="font-heading font-normal text-[36px] md:text-[44px] lg:text-[48px] leading-[115%] tracking-[-0.005em] text-text-a mt-4 md:mt-5 lg:mt-6">
+        Meet Cleric
+      </h2>
+
+      <!-- Subtitle -->
+      <p class="font-body font-normal text-[18px] md:text-[20px] lg:text-[24px] leading-[125%] tracking-[0.0075em] text-text-b mt-2">
+        Cleric investigates problems, surfaces answers, and learns from your engineers.
+      </p>
+
+      <!-- Image -->
+      <div class="mt-10 md:mt-12 lg:mt-16 px-0 md:px-10 lg:px-[80px]">
+        <!-- Desktop image -->
+        <img
+          src="/assets/meet-cleric.png"
+          alt="Meet Cleric - AI SRE Interface"
+          class="hidden lg:block w-full h-auto"
+          loading="lazy"
+          decoding="async"
+        />
+        <!-- Mobile/Tablet image -->
+        <img
+          src="/assets/meet-cleric-section.png"
+          alt="Meet Cleric - AI SRE Interface"
+          class="lg:hidden w-full h-auto"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
     </div>
   </section>
 
 
 
+<!-- Cleric in Action Section -->
+<section class="py-20 md:py-[120px] lg:py-[160px] px-4">
+  <div class="max-w-[1192px] mx-auto">
+    <!-- Header -->
+    <div class="text-center lg:text-center md:text-left">
+      <Eyebrow text="Cleric in action" />
+
+      <!-- Title -->
+      <h2 class="font-heading font-normal text-[32px] md:text-[44px] lg:text-[48px] leading-[115%] tracking-[-0.005em] text-text-a mt-4 md:mt-5 lg:mt-6">
+        Things break. Cleric investigates.
+      </h2>
+
+      <!-- Subtitle -->
+      <p class="font-body font-normal text-[18px] md:text-[20px] lg:text-[24px] leading-[125%] tracking-[0.0075em] text-text-b mt-2">
+        While you're still reading the alert, Cleric's already three steps into the investigation.
+      </p>
+    </div>
+
+    <!-- Feature Cards Container -->
+    <div class="mt-10 md:mt-12 lg:mt-16 flex flex-col gap-6 md:gap-8 lg:gap-12">
+      <!-- Feature Card: Skip straight to the answer -->
+      <FeatureCard
+        title="Skip straight to the answer"
+        subtitle="Cleric automatically investigates alerts and delivers root cause analysis so you know exactly what's wrong and whether to act."
+        image="/assets/skip-straight-to-answer-section.png"
+        imageAlt="Skip straight to the answer feature"
+        variant="text-left"
+        imageBlur="bottom"
+      />
+
+      <!-- Feature Card: Trust but verify -->
+      <FeatureCard
+        title="Trust but verify"
+        subtitle="See exactly how Cleric reached its conclusions so you can trust the diagnosis and move to resolution."
+        image="/assets/trust-but-verify-section.png"
+        imageAlt="Trust but verify feature"
+        variant="text-right"
+        imageBlur="left"
+      />
+
+      <!-- Feature Card: Ship a fix -->
+      <FeatureCard
+        title="Ship a fix"
+        subtitle="Work with Cleric to ship fixes by asking questions, giving instructions, and collaborating until the issue is resolved."
+        image="/assets/ship-a-fix-section.png"
+        imageAlt="Ship a fix feature"
+        variant="text-left"
+        imageBlur="right"
+        worksInside="slack"
+      />
+
+      <!-- Feature Card: Learns from failure -->
+      <FeatureCard
+        title="Learns from failure"
+        subtitle="Engineers leave, context doesn't. Every resolution becomes institutional knowledge your whole team can use."
+        image="/assets/learns-from-failure.png"
+        imageAlt="Learns from failure feature"
+        variant="text-right"
+        imageBlur="left"
+      />
+    </div>
+  </div>
+</section>
 
 <!-- Integrations Section -->
 <section class="py-16 md:py-20 lg:py-24 px-4 text-center">
-  <h2 class="font-heading text-[32px] md:text-[40px] lg:text-[48px] leading-[115%] tracking-[-0.005em] text-text-a mb-4">
+
+  <Eyebrow text="Integrations" />
+  <h2 class="font-heading text-[32px] md:text-[40px] lg:text-[48px] leading-[115%] tracking-[-0.005em] text-text-a my-4">
     Built to plug right into your stack
   </h2>
   <p class="font-body font-normal text-base md:text-lg leading-[140%] text-text-b mb-12">
@@ -203,16 +342,6 @@ import FeatureCard from '../components/FeatureCard.astro';
     <LogoBrand name="googlecloud" />
   </div>
 </section>
-
-<!-- Feature Card: Skip straight to the answer -->
-<FeatureCard
-  title="Skip straight to the answer"
-  subtitle="Cleric automatically investigates alerts and delivers root cause analysis so you know exactly what's wrong and whether to act."
-  image="/assets/skip-straight-to-answer-section.png"
-  imageAlt="Skip straight to the answer feature"
-  variant="text-left"
-  imageBlur="bottom"
-/>
 
 <!-- Unblock Section -->
 <UnblockSection />
