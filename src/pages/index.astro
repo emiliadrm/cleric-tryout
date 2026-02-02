@@ -9,6 +9,7 @@ import LogoBrand from '../components/ui/LogoBrand.astro';
 import UnblockSection from '../components/UnblockSection.astro';
 import FeatureCard from '../components/FeatureCard.astro';
 import Eyebrow from '../components/ui/Eyebrow.astro';
+import SecuritySection from '../components/SecuritySection.astro';
 ---
 
 <Layout
@@ -236,7 +237,7 @@ import Eyebrow from '../components/ui/Eyebrow.astro';
         <img
           src="/assets/meet-cleric-section.png"
           alt="Meet Cleric - AI SRE Interface"
-          class="lg:hidden w-full h-auto"
+          class="lg:hidden w-full h-auto px-4"
           loading="lazy"
           decoding="async"
         />
@@ -250,7 +251,7 @@ import Eyebrow from '../components/ui/Eyebrow.astro';
 <section class="pt-20 pb-10 md:pt-[120px] md:pb-[60px] lg:pt-[160px] lg:pb-[80px] px-4">
   <div class="max-w-[1192px] mx-auto">
     <!-- Header -->
-    <div class="text-center lg:text-center md:text-left">
+    <div class="text-left lg:text-center max-w-2xl md:max-w-[642px] lg:max-w-none mx-auto md:px-0 px-4">
       <Eyebrow text="Cleric in action" />
 
       <!-- Title -->
@@ -311,7 +312,7 @@ import Eyebrow from '../components/ui/Eyebrow.astro';
 </section>
 
 <!-- Foundations Section -->
-<section class="mt-10 mb-20 md:mt-[60px] md:mb-[120px] lg:mt-20 lg:mb-[160px] px-4">
+<section class="mt-10 md:mt-[60px] lg:mt-20 px-4">
   <div class="max-w-[1192px] mx-auto">
     <!-- Header -->
     <div class="text-center lg:text-center md:text-left">
@@ -339,7 +340,7 @@ import Eyebrow from '../components/ui/Eyebrow.astro';
           image="/assets/maps-your-world.png"
           imageAlt="Maps your world feature"
           variant="column"
-          imageBlur="none"
+          imageStyle="padded"
         />
 
         <!-- Tests every theory -->
@@ -349,7 +350,7 @@ import Eyebrow from '../components/ui/Eyebrow.astro';
           image="/assets/test-every-theory-section.png"
           imageAlt="Tests every theory feature"
           variant="column"
-          imageBlur="right"
+          imageStyle="blur-sides-bottom"
         />
       </div>
 
@@ -368,7 +369,7 @@ import Eyebrow from '../components/ui/Eyebrow.astro';
     </div>
 
     <!-- CTA Button -->
-    <div class="flex justify-center mt-10 md:mt-12 lg:mt-16">
+    <div class="flex justify-center mt-10 md:mt-12 lg:mt-16 mb-20 md:mb-[120px] lg:mb-[160px]">
       <Button type="primary" size="medium" mode="dark" as="a" href="#explore-platform">
         Explore Full Platform
       </Button>
@@ -376,8 +377,11 @@ import Eyebrow from '../components/ui/Eyebrow.astro';
   </div>
 </section>
 
+<!-- Security Section -->
+<SecuritySection />
+
 <!-- Integrations Section -->
-<section class="py-16 md:py-20 lg:py-24 px-4 text-center">
+<section class="pt-20 md:pt-[120px] lg:pt-[160px] pb-16 md:pb-20 lg:pb-24 px-4 text-center">
 
   <Eyebrow text="Integrations" />
   <h2 class="font-heading text-[32px] md:text-[40px] lg:text-[48px] leading-[115%] tracking-[-0.005em] text-text-a my-4">

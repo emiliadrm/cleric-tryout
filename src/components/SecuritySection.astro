@@ -1,0 +1,51 @@
+---
+import Eyebrow from './ui/Eyebrow.astro';
+---
+
+<!-- Security Section -->
+<section class="bg-gradient-to-b from-gray-light to-gray-lighter">
+  <div class="max-w-[1192px] xl:max-w-[1100px] 2xl:max-w-[1192px] mx-auto px-4 md:px-24 lg:px-8 xl:px-0 py-16 md:py-20 lg:py-[120px]">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 lg:gap-16 items-center">
+
+      <!-- Text Content -->
+      <div class="flex flex-col">
+        <div class="w-fit">
+          <Eyebrow text="Security first" />
+        </div>
+
+        <h2 class="font-heading font-normal text-[32px] md:text-[44px] lg:text-[48px] leading-[115%] tracking-[-0.005em] text-text-a mt-4 md:mt-5 lg:mt-6">
+          Paranoid by design
+        </h2>
+
+        <p class="font-body font-normal text-lg md:text-xl leading-[140%] text-text-b mt-4">
+          Read-only by default. Every action logged, every investigation auditable. Your data encrypted everywhere and never used for training.
+        </p>
+
+        <p class="font-body font-normal text-base leading-[140%] text-text-b mt-6">
+          Learn more in our
+          <a href="#trust-center" class="text-text-a underline underline-offset-2 hover:text-text-b transition-colors inline-flex items-center gap-1">
+            Trust Center
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block">
+              <path d="M7 7h10v10"/>
+              <path d="M7 17 17 7"/>
+            </svg>
+          </a>
+        </p>
+      </div>
+
+      <!-- Image Content -->
+      <div class="flex justify-center lg:justify-end">
+        <img
+          src="/assets/paranoid-design-section.png"
+          alt="Security and trust features"
+          class="w-full max-w-[500px] md:max-w-none md:px-[70px] lg:px-0 h-auto object-contain"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+    </div>
+
+  </div>
+</section>
