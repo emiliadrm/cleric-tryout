@@ -44,7 +44,7 @@ const socialLinks = [
 ---
 
 <footer class={`bg-cleric-white py-12 ${className}`}>
-  <div class="container mx-auto px-4 md:px-10 2xl:px-20">
+  <div class="max-w-[640px] md:max-w-[720px] lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1192px] mx-auto px-4 md:px-6 lg:px-8 xl:px-0">
 
     <!-- Mobile Layout (< 768px) -->
     <div class="md:hidden">
@@ -146,9 +146,9 @@ const socialLinks = [
 
     <!-- Tablet & Desktop Layout (>= 768px) -->
     <div class="hidden md:block">
-      <div class="max-w-7xl mx-auto">
+      <div>
         <!-- 4 Columns Grid: Logo | Cleric | Help & Security | Use Cases -->
-        <div class="grid grid-cols-4 gap-8 lg:gap-16 mb-8">
+        <div class="grid grid-cols-4 gap-6 lg:gap-10 mb-8">
 
           <!-- Column 1: Logo -->
           <div>
@@ -200,7 +200,7 @@ const socialLinks = [
         </div>
 
         <!-- Bottom Section: Grid matching column structure -->
-        <div class="grid grid-cols-4 gap-8 lg:gap-16">
+        <div class="grid grid-cols-4 gap-6 lg:gap-10">
           <!-- Column 1: LinkedIn + X Icons (below Logo) -->
           <div class="flex items-center gap-4">
             {socialLinks.map(social => (
